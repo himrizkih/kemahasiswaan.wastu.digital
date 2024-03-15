@@ -35,7 +35,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         <div class="row">
           <div class="col-lg-9 text-center text-lg-start">
             <h2><a href="#"><span>|</span>Sambutan</a></h2>
-            <h3>KA Staf Kemahasiswaan HUMAS & HUBIN STT Wastukancana</h3>
+            <h3>Kepala Staf Kemahasiswaan HUMAS & HUBIN STT Wastukancana</h3>
           </div>
         </div>
 

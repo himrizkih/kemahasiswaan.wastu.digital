@@ -76,7 +76,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
           <div class="col-lg-6">
             <h3>Visi dan Misi
-              <br>Bidang Kemahasiswaan HUMAS & HUBIN STT Wastukancana</h3>
+              <br>Bidang Kemahasiswaan HUMAS & HUBIN 
+              <br>STT Wastukancana</h3>
 
             <!-- Tabs -->
             <ul class="nav nav-pills mb-3">

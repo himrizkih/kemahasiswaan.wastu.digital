@@ -151,7 +151,7 @@
 
   <main id="main">
 
-<!-- ======= Recent Blog Posts Section ======= -->
+<!-- ======= Recent Blog Posts Section ======= --><!--Style1|1996-->
 <section id="recent-blog-posts" class="recent-blog-posts">
 
   <div class="container" data-aos="fade-up">

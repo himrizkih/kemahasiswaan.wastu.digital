@@ -1,4 +1,4 @@
-<!-- ======= Footer ======= -->
+<!-- ======= Footer ======= --><!--style1|3070-->
   <footer>
     <div class="footer-area">
       <div class="container">
@@ -11,8 +11,9 @@
                   <div class="footer-logo">
                     <h2><span>|</span>Kemahasiswaan</h2>
                   </div>
-                  <p>Bidang Kemahasiswaan HUMAS dan HUBIN
-                  <br>STT Wastukancana Purwakarta</p>
+                  <p>Bidang Kemahasiswaan 
+                  <br>HUMAS dan HUBIN</p>
+                  <p>STT Wastukancana Purwakarta</p>
                   <div class="footer-icons">
                     <ul>
                       <li>
@@ -75,7 +76,8 @@
                 <div class="footer-contacts">
                   <p><span>Tel :</span> (0264) 214952 / (0264) 8225153</p>
                   <p><span>Email :</span> helpdesk@stt-wastukancana.ac.id</p>
-                  <p><span>Kampus Utama :</span> Jl. Cikopak No.53, Sadang Purwakarta Jawa Barat Indonesia</p>
+                  <p><span>Kampus Utama :</span> Jl. Cikopak No.53, Sadang, Purwakarta, 
+                  <br>Jawa Barat, Indonesia</p>
                 </div>
               </div>
             </div>
