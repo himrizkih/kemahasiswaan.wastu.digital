@@ -20,3 +20,4 @@
   <!-- Main CSS File -->
   <link href="<?php echo base_url().'theme/assets/css/style.css'?>" rel="stylesheet">
   <link href="<?php echo base_url().'theme/assets/css/style1.css'?>" rel="stylesheet">
+  <link href="<?php echo base_url().'theme/assets/css/style-front.css'?>" rel="stylesheet">

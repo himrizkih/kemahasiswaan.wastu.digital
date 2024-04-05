@@ -28,7 +28,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
   <?php $this->load->view('layout/v_header');?>
 
-  <!-- ======= Cta Title Section ======= -->
+    <!-- ======= Cta Title Section-//1266 ======= -->
     <section id="cta" class="cta">
       <div class="container" data-aos="zoom-in">
 
@@ -40,8 +40,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         </div>
 
       </div>
-    </section><!-- End Cta Title Section -->
+    </section>
+    <!-- End Cta Title Section -->
 
+    <!-- Breadcrumbs-//1325 -->
     <section id="breadcrumbs" class="breadcrumbs">
       <div class="container"  data-aos="zoom-in">
 
@@ -76,7 +78,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 
       </div>
-    </section><!-- End Breadcrumbs -->
+    </section>
+    <!-- End Breadcrumbs -->
 
 <?php $this->load->view('layout/v_footer');?>
 

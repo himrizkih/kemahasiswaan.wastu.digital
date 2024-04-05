@@ -1,4 +1,4 @@
-<!-- ======= Header ======= -->
+<!-- ======= Header-//135 ======= -->
   <header id="header" class="fixed-top d-flex align-items-center">
     <div class="container d-flex justify-content-between">
 
@@ -7,7 +7,7 @@
         <h4>Sekolah Tinggi Teknologi Wastukancana</h4></a>
       </div>
 
-      <!-- navbar -->
+      <!-- navbar-//428 -->
       <nav id="navbar" class="navbar">
         <ul>
           <li><a class="nav-link scrollto active" href="<?php echo base_url().'beranda'?>">Beranda</a></li>
@@ -58,4 +58,4 @@
 
     </div>
   </header>
-<!-- End Header
+<!-- End Header -->

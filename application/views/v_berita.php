@@ -37,7 +37,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
   <?php $this->load->view('layout/v_header');?>
 
-    <!-- ======= Cta Section ======= -->
+    <!-- ======= Cta Section-//1266 ======= -->
     <section id="cta" class="cta">
       <div class="container" data-aos="zoom-in">
 
@@ -49,7 +49,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         </div>
 
       </div>
-    </section><!-- End Cta Section -->
+    </section>
+    <!-- End Cta Section -->
 
     <!-- ======= Breadcrumbs ======= -->
     <section id="breadcrumbs" class="breadcrumbs">
@@ -61,9 +62,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         </ol>
 
       </div>
-    </section><!-- End Breadcrumbs -->
+    </section>
+    <!-- End Breadcrumbs -->
 
-    <!-- ======= Blog Section ======= -->
+    <!-- ======= Blog Section-//1697 ======= -->
     <section id="blog" class="blog">
       <div class="container" data-aos="fade-up">
 
@@ -104,8 +106,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                   <div class="meta-top">
                     <ul>
                       <li class="d-flex align-items-center"><i class="bi bi-person"></i> <a href="<?php echo base_url().'berita_detail/'.$berita_slug;?>"><?php echo limit_words($berita_author,2).'...';?></a></li>
-                      <br>
-                      <p>.</p>
                       <li class="d-flex align-items-center"><i class="bi bi-clock"></i> <a href="<?php echo base_url().'berita_detail/'.$berita_slug;?>"><time datetime="2022-01-01"><?php echo $berita_tanggal;?></time></a></li>
                     </ul>
                   </div>
@@ -129,7 +129,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
           </div>
 
           <div style="margin-bottom: -40px;" class="col-lg-4">
-
+            
+            <!-- Blog Sidebar-//1811 -->
             <div class="sidebar">
 
               <div class="sidebar-item search-form">
@@ -189,7 +190,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     </section><!-- End Blog Section -->
 
 <!-- ===================================================================== -->
-    <!-- ======= Blog Section ======= -->
+    <!-- ======= Blog Section-//1697 ======= -->
     <section style="margin-top: -50px;" id="blog" class="blog">
       <div class="container" data-aos="fade-up">
 
@@ -231,8 +232,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                   <div class="meta-top">
                     <ul>
                       <li class="d-flex align-items-center"><i class="bi bi-person"></i> <a href="<?php echo base_url().'berita_detail/'.$berita_slug;?>"><?php echo limit_words($berita_author,2).'...';?></a></li>
-                      <br>
-                      <p>.</p>
                       <li class="d-flex align-items-center"><i class="bi bi-clock"></i> <a href="<?php echo base_url().'berita_detail/'.$berita_slug;?>"><time datetime="2022-01-01"><?php echo $berita_tanggal;?></time></a></li>
                     </ul>
                   </div>
@@ -259,7 +258,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
       </div>
     </section>
 
-    <!-- ======= Blog Section ======= -->
+    <!-- ======= Blog Section-//1697 ======= -->
     <section id="blog" class="blog">
       <div class="container" data-aos="fade-up">
 
@@ -301,8 +300,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                   <div class="meta-top">
                     <ul>
                       <li class="d-flex align-items-center"><i class="bi bi-person"></i> <a href="<?php echo base_url().'berita_detail/'.$berita_slug;?>"><?php echo limit_words($berita_author,2).'...';?></a></li>
-                      <br>
-                      <p>.</p>
                       <li class="d-flex align-items-center"><i class="bi bi-clock"></i> <a href="<?php echo base_url().'berita_detail/'.$berita_slug;?>"><time datetime="2022-01-01"><?php echo $berita_tanggal;?></time></a></li>
                     </ul>
                   </div>

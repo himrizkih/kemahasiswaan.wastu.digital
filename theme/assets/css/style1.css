@@ -220,7 +220,7 @@ div#preloader {
 }
 
 /*--------------------------------------------------------------
-# Header
+# Header-#v_header.php-//1-61
 --------------------------------------------------------------*/
 #header {
   height: 80px;
@@ -244,7 +244,7 @@ div#preloader {
 }
 
 #header .logo h4 {
-  font-size: 12px;
+  font-size: 20px;
   margin: 0;
   padding: 0;
   padding-left: 41px;
@@ -320,7 +320,7 @@ div#preloader {
 }
 
 /*--------------------------------------------------------------
-# Navigation Menu
+# Navigation Menu-#v_header.php-#v_header_bea.php
 --------------------------------------------------------------*/
 /**
 * Desktop Navigation 
@@ -673,14 +673,13 @@ div#preloader {
   }   
 }
 
-
 #hero .btn-get-starteds:hover {
   padding-top: 8px;
   background: rgba(255, 255, 255, 0.15);
 }
 
 /*--------------------------------------------------------------
-# Hero Section
+# Hero Section-#v_beranda.php-//39-99
 --------------------------------------------------------------*/
 #hero {
   width: 100%;
@@ -1993,7 +1992,7 @@ div#preloader {
 }
 
 /*--------------------------------------------------------------
-# Recent Blog Posts
+# Recent Blog Posts-#v_beranda.php-//156-336
 --------------------------------------------------------------*/
 .recent-blog-posts .post-box {
   box-shadow: 0px 0 30px rgba(1, 41, 112, 0.08);
@@ -3067,7 +3066,7 @@ section {
   color: #2a2c39;
 }
 /*--------------------------------------------------------------
-# Footer
+# Footer-#v_footer.php-//1-103
 --------------------------------------------------------------*/
 .footer-area {
   padding: 40px 0;

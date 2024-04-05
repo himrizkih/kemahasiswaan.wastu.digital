@@ -1,4 +1,4 @@
-<!-- ======= Footer ======= --><!--style1|3070-->
+<!-- ======= Footer-//235 ======= -->
   <footer>
     <div class="footer-area">
       <div class="container">
@@ -100,4 +100,4 @@
       </div>
     </div>
   </footer>
-<!-- End  Footer -->
+<!-- End Footer -->

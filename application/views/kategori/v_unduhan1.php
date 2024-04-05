@@ -72,13 +72,13 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <div class="col-xl-12 col-sm-12 mb-3">
       <div class="card">
     
-        <div style="margin-bottom: 20px; font-weight: bold; font-size: 16px;" class="card-header">
+        <div style="margin-bottom: 20px; font-weight: bold; font-size: 14px;" class="card-header">
           <center><strong>Tabel Data Unduhan</strong></center>
         </div>
           
         <div class="card-body">
-          <div class="table-responsive">
-            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="10" border="2">
+          <div class="table-responsive" style="font-size: 12px;">
+            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="10" border="1">
               <thead>
                <tr style="text-align:center;">
                   <th>No</th>
@@ -93,10 +93,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                 foreach ($unduhan->result() as $row):
               ?>
                 <tr style="text-align:center;">
-                  <td><?php echo $no++;?></td>
+                  <td><?php echo $no++;?>.</td>
                   <td><?php echo $row->nama;?></td>
                   <td><?php echo $row->tanggal;?></td>
-                  <td><a href="<?php echo site_url('unduhan/get_file/'.$row->id_unduhan);?>" onclick="return confirm('Apakah anda ingin mengunduh File <?php echo $row->nama;?> ?')" class="btn btn-sm btn-info" style="color: white;" >Unduh</a></td>
+                  <td><a href="<?php echo site_url('unduhan/get_file/'.$row->id_unduhan);?>" onclick="return confirm('Apakah anda ingin mengunduh File <?php echo $row->nama;?> ?')" class="btn btn-sm btn-info" style="color: white; font-size: 12px;" >Unduh</a></td>
                 </tr>
               <?php endforeach;?>
             </tbody>

@@ -1,4 +1,4 @@
-<!-- ======= Header ======= -->
+<!-- ======= Header-//135 ======= -->
   <header id="header" class="fixed-top d-flex align-items-center">
     <div class="container d-flex justify-content-between">
 
@@ -9,7 +9,7 @@
 
       <?php 
       if($this->session->userdata('status')=='mhs'){ ?>
-      <!-- navbar -->
+      <!-- navbar-//428 -->
       <nav id="navbar" class="navbar">
         <ul>
           <li><a class="nav-link scrollto active" href="<?php echo base_url().'beasiswa'?>">Beranda</a></li>
