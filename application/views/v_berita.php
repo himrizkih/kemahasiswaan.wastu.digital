@@ -95,7 +95,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
               <div class="col-lg-6">
                 <article class="d-flex flex-column">
 
-                  <div class="post-img">
+                  <div class="post-image">
                     <img src="<?php echo base_url().'theme/assets/img/berita/'.$berita_gambar;?>" alt="" class="img-fluid">
                   </div>
 
@@ -221,7 +221,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
               <div class="col-lg-6">
                 <article class="d-flex flex-column">
 
-                  <div class="post-img">
+                  <div class="post-image">
                     <img src="<?php echo base_url().'theme/assets/img/berita/'.$berita_gambar;?>" alt="" class="img-fluid">
                   </div>
 
@@ -289,7 +289,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
               <div class="col-lg-6">
                 <article class="d-flex flex-column">
 
-                  <div class="post-img">
+                  <div class="post-image">
                     <img src="<?php echo base_url().'theme/assets/img/berita/'.$berita_gambar;?>" alt="" class="img-fluid">
                   </div>
 

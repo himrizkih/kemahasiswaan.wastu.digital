@@ -180,7 +180,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
                 <p class="card-text"><?php echo $kegiatan_nama;?></p>
 
-                  <div class="read-more"><a href="<?php echo base_url().'kegiatan_detail/'.$kegiatan_slug;?>"><i class="bi bi-arrow-right"></i> Read More</a></div>
+                  <div class="read-more"><a href="<?php echo base_url().'kegiatan_detail/'.$kegiatan_slug;?>"><i class="bi bi-arrow-right"></i> Selengkapnya</a></div>
               </div>
             </div>
           </div>
@@ -227,7 +227,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
                 <p class="card-text"><?php echo $kegiatan_nama;?></p>
 
-                  <div class="read-more"><a href="<?php echo base_url().'kegiatan_detail/'.$kegiatan_slug;?>"><i class="bi bi-arrow-right"></i> Read More</a></div>
+                  <div class="read-more"><a href="<?php echo base_url().'kegiatan_detail/'.$kegiatan_slug;?>"><i class="bi bi-arrow-right"></i> Selengkapnya</a></div>
               </div>
             </div>
           </div>
@@ -274,7 +274,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
                 <p class="card-text"><?php echo $kegiatan_nama;?></p>
 
-                  <div class="read-more"><a href="<?php echo base_url().'kegiatan_detail/'.$kegiatan_slug;?>"><i class="bi bi-arrow-right"></i> Read More</a></div>
+                  <div class="read-more"><a href="<?php echo base_url().'kegiatan_detail/'.$kegiatan_slug;?>"><i class="bi bi-arrow-right"></i> Selengkapnya</a></div>
               </div>
             </div>
           </div>
@@ -321,7 +321,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
                 <p class="card-text"><?php echo $kegiatan_nama;?></p>
 
-                  <div class="read-more"><a href="<?php echo base_url().'kegiatan_detail/'.$kegiatan_slug;?>"><i class="bi bi-arrow-right"></i> Read More</a></div>
+                  <div class="read-more"><a href="<?php echo base_url().'kegiatan_detail/'.$kegiatan_slug;?>"><i class="bi bi-arrow-right"></i> Selengkapnya</a></div>
               </div>
             </div>
           </div>

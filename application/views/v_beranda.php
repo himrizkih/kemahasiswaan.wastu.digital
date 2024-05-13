@@ -187,7 +187,7 @@
           </li><!-- End Tab 3 Nav -->
         </ul>
 
-        <div class="tab-content">\
+        <div class="tab-content">
           <div class="tab-pane active show" id="tab-1">
             <div class="row gy-4">
               <div class="col-lg-12 order-2 order-lg-1" data-aos="fade-up" data-aos-delay="100">

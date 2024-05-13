@@ -68,7 +68,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         ?>
             
             <div class="col-lg-12 order-1 order-lg-2 hero-img" data-aos="fade-center" data-aos-delay="200">
-              <center><img src="<?php echo base_url().'theme/assets/img/hero/'.$strukturorganisasi_gambar;?>" alt="Struktur Organisasi">
+              <div class="imgs">
+                <img src="<?php echo base_url().'theme/assets/img/hero/'.$strukturorganisasi_gambar;?>" alt="Struktur Organisasi">
+              </div>
             </div>
 
           </div>

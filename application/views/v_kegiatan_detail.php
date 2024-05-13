@@ -69,13 +69,13 @@ defined('BASEPATH') OR exit('No direct script access allowed');
       </div>
     </section><!-- End Breadcrumbs -->
 
-    <!-- ======= Portfolio Details Section ======= -->
+    <!-- ======= Portfolio Details Section//2466 ======= -->
     <section id="portfolio-details" class="portfolio-details">
       <div class="container">
 
         <div class="row gy-4">
 
-          <div class="col-lg-8">
+          <div class="col-lg-6"><!-- Start Kegiatan Detail -->
             <div class="portfolio-details-slider swiper-container">
               <div class="swiper-wrapper align-items-center">
 
@@ -97,7 +97,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             </div>
           </div>
 
-          <div class="col-lg-4">
+          <div class="col-lg-6">
             <div class="portfolio-info">
               <h3>Informasi Kegiatan</h3>
               <ul>
@@ -133,16 +133,27 @@ defined('BASEPATH') OR exit('No direct script access allowed');
               </ul>
             </div>
 
-            <div class="portfolio-description">
+          </div>
+
+          <div class="col-lg-12">
+            <div class="portfolio-info">
+              <h3>Redaksi Kegiatan</h3>
+              <ul>
+                <li>
+                  <?php echo $kegiatan_deskripsi;?>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+            <!-- <div class="portfolio-description">
               <h2>Redaksi Kegiatan</h2>
               <p>
                 <?php echo $kegiatan_deskripsi;?>
               </p>
-            </div>
+            </div> -->
 
-          </div>
-
-        </div>
+        </div><!-- End Kegiatan Detail -->
 
       </div>
     </section><!-- End Portfolio Details Section -->

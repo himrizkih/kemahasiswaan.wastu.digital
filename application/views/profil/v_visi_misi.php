@@ -63,7 +63,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
           <div class="col-lg-1">
           </div>
           <div class="col-lg-4">
-            <center><img style="margin-top: 50px;" src="<?php echo base_url().'theme/assets/img/hero/logo-navbar.png'?>" class="img-fluid" alt=""></center>
+            <div class="imgvm">
+              <img src="<?php echo base_url().'theme/assets/img/hero/logo-navbar.png'?>" class="img-fluid" alt="">
+            </div>
           </div>
 
         <?php

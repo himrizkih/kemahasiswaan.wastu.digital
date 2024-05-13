@@ -78,21 +78,22 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
   <main id="main">
   
-   <!-- ======= Blog Details Section ======= -->
+   <!-- ======= Blog Details Section-//1960 ======= -->
     <section id="blog" class="blog">
       <div class="container" data-aos="fade-up">
 
         <div class="row g-5">
 
+          <!-- Start blog post -->
           <div class="col-lg-8">
 
             <article class="blog-details">
 
-              <div class="post-img">
+              <div class="post-imgs">
                 <img src="<?php echo base_url().'theme/assets/img/berita/'.$berita_gambar;?>" alt="" class="img-fluid">
               </div>
 
-              <h2 class="title"><?php echo $berita_judul;?></h2>
+              <h3 class="title"><?php echo $berita_judul;?></h3>
 
               <div class="meta-top">
                 <ul>
@@ -114,10 +115,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                 </ul>
               </div><!-- End meta bottom -->
 
-            </article><!-- End blog post -->
+            </article>
 
-          </div>
+          </div><!-- End blog post -->
 
+          <!-- Start Blog Sidebar -->
           <div class="col-lg-4">
 
             <div class="sidebar">

@@ -73,9 +73,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             </div>
             
             <div class="col-lg-4 order-1 order-lg-2 hero-img" data-aos="fade-left" data-aos-delay="200">
-              <center><img src="<?php echo base_url().'theme/assets/img/hero/'.$sambutan_foto;?>" class="img-fluid animated" alt="">
+              <img src="<?php echo base_url().'theme/assets/img/hero/'.$sambutan_foto;?>" class="img-fluid animated" alt="">
               <h6><?php echo $sambutan_nama;?>
-              <br>(Kepala Staf Kemahasiswaan HUMAS & HUBIN)</h6></center>
+              <br>(Kepala Staf Kemahasiswaan HUMAS & HUBIN)</h6>
             </div>
           </div>
         </div>
