@@ -92,7 +92,7 @@
           <div class="col-md-12 col-sm-12 col-xs-12">
             <div class="copyright text-center">
               <p>
-                &copy; Copyright 2022 - <?php echo date('Y')?> | <strong>Bidang Kemahasiswaan - STT Wastukancana Purwakarta</strong>
+                &copy; Copyright <?php echo date('Y')?> | <strong>Bidang Kemahasiswaan - STT Wastukancana Purwakarta</strong>
               </p>
             </div>
           </div>

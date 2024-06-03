@@ -3,7 +3,7 @@
       <footer class="sticky-footer">
         <div class="container my-auto">
           <div class="copyright text-center my-auto">
-            <span>&copy; Copyright 2021-<?php echo date('Y')?> Crafted with <i class="fa fa-heart text-danger"></i> | Sistem Informasi Kemahasiswaan - STT Wastukancana Purwakarta</span>
+            <span>&copy; Copyright <?php echo date('Y')?> Crafted with <i class="fa fa-heart text-danger"></i> | Sistem Informasi Kemahasiswaan - STT Wastukancana Purwakarta</span>
           </div>
         </div>
       </footer><!-- End Sticky Footer -->

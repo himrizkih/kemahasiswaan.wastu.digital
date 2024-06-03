@@ -54,7 +54,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
       </div>
     </section><!-- End Breadcrumbs -->
 
-    <!-- ======= Contact Section ======= -->
+    <!-- ======= Contact Section//2676 ======= -->
     <section id="contact" class="contact">
       <div class="container" data-aos="fade-up">
 
@@ -71,7 +71,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
               <div class="address">
                 <i class="bi bi-geo-alt"></i>
                 <h4>Kampus Utama:</h4>
-                <p>Jl. Cikopak No.53, Sadang Purwakarta Jawa Barat Indonesia</p>
+                <p>Jl. Cikopak No.53, Sadang Purwakarta Jawa Barat</p>
               </div>
 
               <div class="email">

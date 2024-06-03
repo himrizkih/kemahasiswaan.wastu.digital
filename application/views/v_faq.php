@@ -80,11 +80,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             ?>
               <ul>
                 <li>
-                  <a data-bs-toggle="collapse" class="collapse" data-bs-target="#accordion-list-<?php echo $list1++;?>"><span><?php echo $no++;?>.</span> <?php echo $faq_pertanyaan;?> ? <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
+                  <a data-bs-toggle="collapse" class="collapse" data-bs-target="#accordion-list-<?php echo $list1++;?>"><?php echo $no++;?>. <?php echo $faq_pertanyaan;?> ? <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
                   <div id="accordion-list-<?php echo $list2++;?>" class="collapse show" data-bs-parent=".accordion-list">
-                    <p>
                       <?php echo $faq_jawaban;?>.
-                    </p>
                   </div>
                 </li>
                 <?php endforeach;?>

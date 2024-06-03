@@ -62,7 +62,7 @@
       </li>
 
 <?PHP } ?>
-      <li class="nav-item dropdown no-arrow">
+      <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           <i class="fas fa-user-circle fa-fw"></i><span> <?php echo $this->session->userdata('nama') ?> </span>
         </a>
@@ -93,12 +93,13 @@
       if($this->session->userdata('departemen')=='Kemahasiswaan'){ ?>
       
       <!-- Sidebar Menu Master Data -->
-      <li class="nav-item">
+      <!-- <li class="nav-item">
         <a class="nav-link" href="<?php echo base_url() ?>admin/approval/user">
           <i class="fas fa-fw fa-users"></i>
           <span>Master Data</span>
         </a>
-      </li><!-- End Menu Master Data -->
+      </li> -->
+      <!-- End Menu Master Data -->
 
       <!-- Sidebar Menu Beranda -->
       <li class="nav-item dropdown">
@@ -129,26 +130,26 @@
 
       <!-- Sidebar Menu Pengajuan -->
         <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="pagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <a class="nav-link dropdown-toggle" href="#" id="pagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" onClick="alert('Under Maintenance.')">
         <i class="fas fa-cash-register"></i>
           <span>Pengajuan</span>
         </a>
-        <div class="dropdown-menu" aria-labelledby="pagesDropdown">
+        <!-- <div class="dropdown-menu" aria-labelledby="pagesDropdown">
           <a class="dropdown-item" href="<?php echo base_url() ?>admin/approval/proposal">Proposal</a>
           <a class="dropdown-item" href="<?php echo base_url() ?>admin/approval/lpj">LPJ</a>
-        </div>
+        </div> -->
       </li><!-- End Menu Pengajuan -->
 
       <!-- Sidebar Menu Arsip -->
       <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="pagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <a class="nav-link dropdown-toggle" href="#" id="pagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" onClick="alert('Under Maintenance.')">
         <i class="fas fa-fw fa-book"></i>
           <span>Arsip</span>
         </a>
-        <div class="dropdown-menu" aria-labelledby="pagesDropdown">
+        <!-- <div class="dropdown-menu" aria-labelledby="pagesDropdown">
           <a class="dropdown-item" href="<?php echo base_url() ?>admin/approval/proposal/arsipProposal">Arsip Proposal</a>
           <a class="dropdown-item" href="<?php echo base_url() ?>admin/approval/lpj/arsipLPJ">Arsip LPJ</a>
-        </div>
+        </div> -->
       </li><!-- End Menu Arsip -->
 
       <!-- Sidebar Menu Kegiatan -->
@@ -190,15 +191,14 @@
 
         <!-- Sidebar Menu Pengajuan -->
         <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="pagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <a class="nav-link dropdown-toggle" href="#" id="pagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" onClick="alert('Under Maintenance.')">
         <i class="fas fa-cash-register"></i>
           <span>Pengajuan</span>
         </a>
-        <div class="dropdown-menu" aria-labelledby="pagesDropdown">
-          <h6 class="dropdown-header">Pengajuan :</h6>
+        <!-- <div class="dropdown-menu" aria-labelledby="pagesDropdown">
           <a class="dropdown-item" href="<?php echo base_url() ?>admin/approval/proposal">Proposal</a>
           <a class="dropdown-item" href="<?php echo base_url() ?>admin/approval/lpj">LPJ</a>
-        </div>
+        </div> -->
       </li><!-- End Menu Pengajuan -->
 
       <!-- Sidebar Menu Kegiatan -->
@@ -212,15 +212,14 @@
 
       <!-- Sidebar Menu Arsip -->
       <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="pagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <a class="nav-link dropdown-toggle" href="#" id="pagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" onClick="alert('Under Maintenance.')">
         <i class="fas fa-fw fa-book"></i>
           <span>Arsip</span>
         </a>
-        <div class="dropdown-menu" aria-labelledby="pagesDropdown">
-          <h6 class="dropdown-header">Arsip :</h6>
+        <!-- <div class="dropdown-menu" aria-labelledby="pagesDropdown">
           <a class="dropdown-item" href="<?php echo base_url() ?>admin/approval/proposal/arsipProposal">Arsip Proposal</a>
           <a class="dropdown-item" href="<?php echo base_url() ?>admin/approval/lpj/arsipLPJ">Arsip LPJ</a>
-        </div>
+        </div> -->
       </li><!-- End Menu Arsip -->
 
       <!-- Sidebar Menu Logout -->
