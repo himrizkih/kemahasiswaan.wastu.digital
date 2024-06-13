@@ -16,10 +16,10 @@
               <td colspan="3"><input type="text" name="deskripsi" class="form-control" value="<?php echo $slider['deskripsi']; ?>" placeholder="Deskripsi Slider (Optional)"></td>
              </tr>
              <tr>
-              <td colspan="1">Gambar<label style="color: red;">*</label></td>
+              <td colspan="1">Gambar</td>
               <td>
                 <br>
-                <input type="file" name="gambar" required>
+                <input type="file" name="gambar">
                   <br>
                     <a style="font-size: 12px;">Jenis File: gif | jpg | png | jpeg | bmp</a>
                   <br>

@@ -186,27 +186,47 @@
             $this->load->library('image_lib', $config);
             $this->image_lib->resize();
             if(!$this->upload->do_upload('gambar')){
-                redirect('admin/kemahasiswaan/kegiatan?pesan=upload_gagal'); die;
+                // redirect('admin/kemahasiswaan/kegiatan?pesan=upload_gagal'); die;
+                $data = array(
+                    'nama' =>$nama,
+                    'kategori' =>$kategori,
+                    'peserta' =>$peserta,
+                    'jumlah_peserta' =>$jumlah_peserta,
+                    'tanggal' =>$tanggal,
+                    'deskripsi' =>$deskripsi,
+                    'status' =>$status,
+                    'kegiatan_slug' =>$kegiatan_slug
+                );
             } else {
                 $gambar = $this->upload->data('file_name');
+                $data = array(
+                    'nama' =>$nama,
+                    'kategori' =>$kategori,
+                    'peserta' =>$peserta,
+                    'jumlah_peserta' =>$jumlah_peserta,
+                    'tanggal' =>$tanggal,
+                    'deskripsi' =>$deskripsi,
+                    'status' =>$status,
+                    'gambar'=>$gambar,
+                    'kegiatan_slug' =>$kegiatan_slug
+                );
             }
-             // var_dump($deskripsi);die;
            }
-            // var_dump($_FILES);die;
-            $data = array(
-                'nama' =>$nama,
-                'kategori' =>$kategori,
-                'peserta' =>$peserta,
-                'jumlah_peserta' =>$jumlah_peserta,
-                'tanggal' =>$tanggal,
-                'deskripsi' =>$deskripsi,
-                'status' =>$status,
-                'gambar'=>$gambar,
-                // 'kegiatan_id_user' =>$kegiatan_id_user,
-                // 'ormawa' =>$ormawa,
-                'kegiatan_slug' =>$kegiatan_slug
 
-            );
+            // $data = array(
+            //     'nama' =>$nama,
+            //     'kategori' =>$kategori,
+            //     'peserta' =>$peserta,
+            //     'jumlah_peserta' =>$jumlah_peserta,
+            //     'tanggal' =>$tanggal,
+            //     'deskripsi' =>$deskripsi,
+            //     'status' =>$status,
+            //     'gambar'=>$gambar,
+            //     // 'kegiatan_id_user' =>$kegiatan_id_user,
+            //     // 'ormawa' =>$ormawa,
+            //     'kegiatan_slug' =>$kegiatan_slug
+            // );
+
              $where=array('id_kegiatan'=>$id_kegiatan
              );
              $this->m_crud->update_data($where,$data,'kegiatan');     

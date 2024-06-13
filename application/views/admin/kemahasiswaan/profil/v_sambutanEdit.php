@@ -22,10 +22,10 @@
               </td>
              </tr>
              <tr>
-              <td colspan="1">Foto<label style="color: red;">*</label></td>
+              <td colspan="1">Foto</label></td>
               <td>
                 <br>
-                <input type="file" name="foto" required>
+                <input type="file" name="foto">
                   <br>
                     <a style="font-size: 12px;">Jenis File: gif | jpg | png | jpeg | bmp</a>
                   <br>

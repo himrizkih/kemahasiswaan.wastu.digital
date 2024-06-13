@@ -78,18 +78,27 @@
             $this->load->library('upload', $config);
             $this->upload->initialize($config);
             if(!$this->upload->do_upload('lampiran')){
-                redirect('admin/kemahasiswaan/kategori/unduhan_kmhs?pesan=upload_gagal'); die;
+                // redirect('admin/kemahasiswaan/kategori/unduhan_kmhs?pesan=upload_gagal'); die;
+                $data = array(
+                    'nama' =>$nama,
+                    'tanggal' =>$tanggal
+                );
             } else {
                 $lampiran = $this->upload->data('file_name');
+                $data = array(
+                    'nama' =>$nama,
+                    'tanggal' =>$tanggal,
+                    'lampiran' =>$lampiran
+                );
             }
            }
            
-            $data = array(
-                'nama' =>$nama,
-                'tanggal' =>$tanggal,
-                'lampiran' =>$lampiran
+            // $data = array(
+            //     'nama' =>$nama,
+            //     'tanggal' =>$tanggal,
+            //     'lampiran' =>$lampiran
+            // );
 
-            );
              $where=array('id_unduhan'=>$id_unduhan
              );
              $this->m_crud->update_data($where,$data,'unduhan');     
@@ -97,7 +106,6 @@
         }else{
             $where=array('id_unduhan'=>$this->uri->segment(6));
             $data['unduhan']=$this->m_crud->edit_data($where,'unduhan')->row_array();
-            // var_dump($where);die;
             $this->load->view('admin/kemahasiswaan/v_header');
             $this->load->view('admin/kemahasiswaan/kategori/v_unduhanEdit_kmhs',$data);
             $this->load->view('admin/kemahasiswaan/v_footer');

@@ -63,8 +63,6 @@
             } else {
                 $gambar = $this->upload->data('file_name');
             }
-            // var_dump($berita_id_user);die;
-            // var_dump($redaksi);die;
            }
            
             $data = array(
@@ -92,7 +90,6 @@
     public function edit()
     {
         if (isset($_POST['update'])) {
-          // var_dump($_POST);die;
            $id_berita=$this->input->post('id');
            $judul=$this->input->post('judul');
            $redaksi=$this->input->post('redaksi');
@@ -122,24 +119,42 @@
             $this->load->library('image_lib', $config);
             $this->image_lib->resize();
             if(!$this->upload->do_upload('gambar')){
-                redirect('admin/kemahasiswaan/beranda/berita?pesan=upload_gagal'); die;
+                // redirect('admin/kemahasiswaan/beranda/berita?pesan=upload_gagal'); die;
+                $data = array(
+                    'judul' =>$judul,
+                    'redaksi' =>$redaksi,
+                    'tanggal' =>$tanggal,
+                    'kategori' =>$kategori,
+                    'berita_id_user' =>$berita_id_user,
+                    'author' =>$author,
+                    'berita_slug' =>$berita_slug
+                );
             } else {
                 $gambar = $this->upload->data('file_name');
+                $data = array(
+                    'judul' =>$judul,
+                    'redaksi' =>$redaksi,
+                    'tanggal' =>$tanggal,
+                    'gambar' =>$gambar,
+                    'kategori' =>$kategori,
+                    'berita_id_user' =>$berita_id_user,
+                    'author' =>$author,
+                    'berita_slug' =>$berita_slug
+                );
             }
-              // var_dump($redaksi);die;
            }
-            // var_dump($_FILES);die;
-            $data = array(
-                'judul' =>$judul,
-                'redaksi' =>$redaksi,
-                'tanggal' =>$tanggal,
-                'gambar' =>$gambar,
-                'kategori' =>$kategori,
-                'berita_id_user' =>$berita_id_user,
-                'author' =>$author,
-                'berita_slug' =>$berita_slug
 
-            );
+            // $data = array(
+            //     'judul' =>$judul,
+            //     'redaksi' =>$redaksi,
+            //     'tanggal' =>$tanggal,
+            //     'gambar' =>$gambar,
+            //     'kategori' =>$kategori,
+            //     'berita_id_user' =>$berita_id_user,
+            //     'author' =>$author,
+            //     'berita_slug' =>$berita_slug
+
+            // );
              $where=array('id_berita'=>$id_berita
              );
              $this->m_crud->update_data($where,$data,'berita');     
@@ -147,7 +162,6 @@
         }else{
             $where=array('id_berita'=>$this->uri->segment(6));
             $data['berita']=$this->m_crud->edit_data($where,'berita')->row_array();
-            // var_dump($where);die;
             $this->load->view('admin/kemahasiswaan/v_header');
             $this->load->view('admin/kemahasiswaan/beranda/v_beritaEdit',$data);
             $this->load->view('admin/kemahasiswaan/v_footer');

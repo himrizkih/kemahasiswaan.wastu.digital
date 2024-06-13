@@ -32,7 +32,9 @@
              </tr>
              <tr>
               <td>Jumlah Peserta<label style="color: red;">*</label></td>
-              <td  colspan="3"><input type="number" name="jumlah_peserta" class="form-control" value="<?php echo $kegiatan['jumlah_peserta']; ?>" placeholder="Jumlah Peserta Kegiatan" required></td>
+              <td  colspan="3"><input type="text" name="jumlah_peserta" class="form-control" value="<?php echo $kegiatan['jumlah_peserta']; ?>" placeholder="Jumlah Peserta Kegiatan" required>
+                  <a style="font-size: 12px;">Tuliskan juga jenis target peserta: Orang, Organisasi, Kampus dll. || Ex: 100 Orang</a>
+              </td>
              </tr>
              <tr>
               <td>Tanggal<label style="color: red;">*</label></td>
@@ -55,10 +57,10 @@
                </td>
              </tr>
              <tr>
-              <td colspan="1">Gambar<label style="color: red;">*</label></td>
+              <td colspan="1">Foto</td>
               <td>
                 <br>
-                <input type="file" name="gambar" required>
+                <input type="file" name="gambar">
                   <br>
                     <a style="font-size: 12px;">Jenis File: gif | jpg | png | jpeg | bmp</a>
                   <br>

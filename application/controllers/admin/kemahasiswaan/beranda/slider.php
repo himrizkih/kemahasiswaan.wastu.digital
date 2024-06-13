@@ -99,19 +99,24 @@
             $this->load->library('image_lib', $config);
             $this->image_lib->resize();
             if(!$this->upload->do_upload('gambar')){
-                redirect('admin/kemahasiswaan/beranda/slider?pesan=upload_gagal'); die;
+                // redirect('admin/kemahasiswaan/beranda/slider?pesan=upload_gagal'); die;
+                $data = array(
+                    'deskripsi' => $deskripsi
+                );
             } else {
                 $gambar = $this->upload->data('file_name');
+                $data = array(
+                    'deskripsi' => $deskripsi,
+                    'gambar'    => $gambar
+                );
             }
-             // var_dump($deskripsi);die;
            }
 
-            // var_dump($_FILES);die;
-            $data = array(
-                'deskripsi' => $deskripsi,
-                'gambar'    => $gambar
+            // $data = array(
+            //     'deskripsi' => $deskripsi,
+            //     'gambar'    => $gambar
+            // );
 
-            );
              $where=array('id_slider'=>$id_slider
              );
              $this->m_crud->update_data($where,$data,'slider');     
@@ -119,7 +124,6 @@
         }else{
             $where=array('id_slider'=>$this->uri->segment(6));
             $data['slider']=$this->m_crud->edit_data($where,'slider')->row_array();
-            // var_dump($where);die;
             $this->load->view('admin/kemahasiswaan/v_header');
             $this->load->view('admin/kemahasiswaan/beranda/v_sliderEdit',$data);
             $this->load->view('admin/kemahasiswaan/v_footer');

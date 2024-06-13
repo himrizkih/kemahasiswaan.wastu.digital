@@ -20,10 +20,10 @@
               <td colspan="3"><input type="date" name="tanggal" class="form-control" value="<?php echo $unduhan['tanggal']; ?>" required></td>
              </tr>
              <tr>
-              <td colspan="1">Lampiran<label style="color: red;">*</label></td>
+              <td colspan="1">Lampiran</td>
               <td>
                 <br>
-                <input type="file" name="lampiran" required>
+                <input type="file" name="lampiran">
                   <br>
                     <a style="font-size: 12px;">Jenis File: pdf | doc | docx | ppt | pptx | zip</a>
                   <br>

@@ -31,7 +31,9 @@
              </tr>
              <tr>
               <td>Jumlah Peserta<label style="color: red;">*</label></td>
-              <td><input type="number" name="jumlah_peserta" class="form-control" placeholder="Jumlah Peserta Kegiatan" required></td>
+              <td><input type="text" name="jumlah_peserta" class="form-control" placeholder="Jumlah Peserta Kegiatan" required>
+                  <a style="font-size: 12px;">Tuliskan juga jenis target peserta: Orang, Organisasi, Kampus dll. || Ex: 100 Orang</a>
+              </td>
              </tr>
              <tr>
               <td>Tanggal<label style="color: red;">*</label></td>
@@ -55,7 +57,7 @@
                </td>
              </tr> -->
              <tr>
-              <td>Gambar<label style="color: red;">*</label></td>
+              <td>Foto<label style="color: red;">*</label></td>
               <td>
                 <input type="file" name="gambar" multiple="" required>
                 <br>

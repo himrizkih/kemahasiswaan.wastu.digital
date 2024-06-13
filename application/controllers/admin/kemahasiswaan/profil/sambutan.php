@@ -85,20 +85,27 @@
             $this->load->library('image_lib', $config);
             $this->image_lib->resize();
             if(!$this->upload->do_upload('foto')){
-                redirect('admin/kemahasiswaan/profil/sambutan?pesan=upload_gagal'); die;
+                // redirect('admin/kemahasiswaan/profil/sambutan?pesan=upload_gagal'); die;
+                $data = array(
+                    'nama'      => $nama,
+                    'sambutan'  => $sambutan
+                );
             } else {
                 $foto = $this->upload->data('file_name');
+                $data = array(
+                    'nama'      => $nama,
+                    'sambutan'  => $sambutan,
+                    'foto'      => $foto
+                );
             }
-             // var_dump($deskripsi);die;
            }
 
-            // var_dump($_FILES);die;
-            $data = array(
-                'nama'      => $nama,
-                'sambutan'  => $sambutan,
-                'foto'      => $foto
-
-            );
+            // $data = array(
+            //     'nama'      => $nama,
+            //     'sambutan'  => $sambutan,
+            //     'foto'      => $foto
+            // );
+            
              $where=array('id_sambutan'=>$id_sambutan
              );
              $this->m_crud->update_data($where,$data,'sambutan');     
@@ -106,7 +113,6 @@
         }else{
             $where=array('id_sambutan'=>$this->uri->segment(6));
             $data['sambutan']=$this->m_crud->edit_data($where,'sambutan')->row_array();
-            // var_dump($where);die;
             $this->load->view('admin/kemahasiswaan/v_header');
             $this->load->view('admin/kemahasiswaan/profil/v_sambutanEdit',$data);
             $this->load->view('admin/kemahasiswaan/v_footer');
