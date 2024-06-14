@@ -2,9 +2,6 @@
   <link rel="shortcut icon" type="image/gif" href="<?php echo base_url().'theme/assets/img/favicon.png'?>">
   <link rel="apple-touch-icon" href="<?php echo base_url().'theme/assets/img/apple-touch-icon.png'?>">
 
-  <!-- Google Fonts -->
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,400i,600,700|Raleway:300,400,400i,500,500i,700,800,900">
-
   <!-- CSS Files -->
   <link href="<?php echo base_url().'theme/assets/vendor/animate.css/animate.min.css'?>" rel="stylesheet">
   <link href="<?php echo base_url().'theme/assets/vendor/bootstrap/css/bootstrap.min.css'?>" rel="stylesheet">

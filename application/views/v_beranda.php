@@ -93,11 +93,11 @@
   <!-- End Hero Section -->
 
   <!-- Card-//704 -->
-  <div class="card">
+  <!-- <div class="card">
     <div class="alert alert-success bg-primary border-0 alert-dismissible fade show" role="alert">A simple info alert with solid color — check it out!
       <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
     </div>
-  </div>
+  </div> -->
   <!-- End Card -->
 
 </div>
