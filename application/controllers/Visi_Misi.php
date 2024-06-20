@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Visi_Misi extends CI_Controller {
+class visi_misi extends CI_Controller {
 
 	function __construct() {
         parent::__construct();

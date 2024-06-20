@@ -2,7 +2,7 @@
  
  defined('BASEPATH') OR exit('No direct script access allowed');
  
- class Masuk_bea_mhs_daftar extends CI_Controller {
+ class masuk_bea_mhs_daftar extends CI_Controller {
      
      public function __construct()
      {

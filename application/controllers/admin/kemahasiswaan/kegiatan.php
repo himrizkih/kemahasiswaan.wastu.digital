@@ -1,5 +1,5 @@
 <?php
- Class Kegiatan extends CI_Controller {
+ Class kegiatan extends CI_Controller {
  
     function __construct() {
         parent::__construct();

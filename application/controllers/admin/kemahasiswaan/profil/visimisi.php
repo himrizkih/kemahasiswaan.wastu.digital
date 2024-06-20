@@ -1,5 +1,5 @@
 <?php
- Class Visimisi extends CI_Controller {
+ Class visimisi extends CI_Controller {
  
     function __construct() {
         parent::__construct();

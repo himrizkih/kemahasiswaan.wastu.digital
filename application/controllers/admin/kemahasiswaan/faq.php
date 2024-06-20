@@ -1,5 +1,5 @@
 <?php
- Class Faq extends CI_Controller {
+ Class faq extends CI_Controller {
  
     function __construct() {
         parent::__construct();

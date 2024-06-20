@@ -1,5 +1,5 @@
 <?php
-class M_post extends CI_Model{
+class m_post extends CI_Model{
 
 	// Beranda ----------------------------------------------------------
 	// Home Model

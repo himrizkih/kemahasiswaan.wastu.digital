@@ -1,5 +1,5 @@
 <?php
- Class Quotes extends CI_Controller {
+ Class quotes extends CI_Controller {
  
     function __construct() {
         parent::__construct();

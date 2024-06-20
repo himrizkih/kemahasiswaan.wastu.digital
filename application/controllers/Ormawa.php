@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Ormawa extends CI_Controller {
+class ormawa extends CI_Controller {
 
 	public function index()
 	{

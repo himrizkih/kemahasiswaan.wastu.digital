@@ -1,5 +1,5 @@
 <?php
- Class Sambutan extends CI_Controller {
+ Class sambutan extends CI_Controller {
  
     function __construct() {
         parent::__construct();

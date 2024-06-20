@@ -1,5 +1,5 @@
 <?php
- Class Slider extends CI_Controller {
+ Class slider extends CI_Controller {
  
     function __construct() {
         parent::__construct();

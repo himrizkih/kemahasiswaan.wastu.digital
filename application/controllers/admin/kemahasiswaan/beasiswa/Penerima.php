@@ -4,7 +4,7 @@
 use PhpOffice\PhpSpreadsheet\Spreadsheet;
 use PhpOffice\PhpSpreadsheet\Writer\Xlsx;
 
- Class Penerima extends CI_Controller {
+ Class penerima extends CI_Controller {
  
     function __construct() {
         parent::__construct();

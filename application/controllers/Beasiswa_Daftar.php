@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Beasiswa_Daftar extends CI_Controller {
+class beasiswa_daftar extends CI_Controller {
 
 	function __construct() {
         parent::__construct();

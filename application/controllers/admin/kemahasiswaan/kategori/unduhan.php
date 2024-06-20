@@ -1,5 +1,5 @@
 <?php
- Class Unduhan extends CI_Controller {
+ Class unduhan extends CI_Controller {
  
     function __construct() {
         parent::__construct();

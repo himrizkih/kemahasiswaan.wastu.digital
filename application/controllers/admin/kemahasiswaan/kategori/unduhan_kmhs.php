@@ -1,5 +1,5 @@
 <?php
- Class Unduhan_kmhs extends CI_Controller {
+ Class unduhan_kmhs extends CI_Controller {
  
     function __construct() {
         parent::__construct();

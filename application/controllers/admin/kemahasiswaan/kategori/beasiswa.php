@@ -1,5 +1,5 @@
 <?php
- Class Beasiswa extends CI_Controller {
+ Class beasiswa extends CI_Controller {
  
     function __construct() {
         parent::__construct();

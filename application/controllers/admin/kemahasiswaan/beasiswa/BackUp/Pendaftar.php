@@ -1,5 +1,5 @@
 <?php
- Class Pendaftar extends CI_Controller {
+ Class pendaftar extends CI_Controller {
  
     function __construct() {
         parent::__construct();

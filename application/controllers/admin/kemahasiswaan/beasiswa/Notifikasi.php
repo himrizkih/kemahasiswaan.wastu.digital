@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Notifikasi extends CI_Controller {
+class notifikasi extends CI_Controller {
 
 	 public function __construct()
      {

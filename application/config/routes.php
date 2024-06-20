@@ -62,6 +62,6 @@ $route['profil/beasiswa']='admin/kemahasiswaan/beasiswa/beasiswa_mhs';
 $route['login']='admin/kemahasiswaan/masuk_bea_dsn';
 $route['dashboard']='admin/kemahasiswaan/beasiswa/dashboard_dsn';
 
-$route['default_controller'] = 'Beranda';
+$route['default_controller'] = 'beranda';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
