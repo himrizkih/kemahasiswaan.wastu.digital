@@ -1,12 +1,11 @@
 <?php
- Class sambutan extends CI_Controller {
+ Class Sambutan extends CI_Controller {
  
     function __construct() {
         parent::__construct();
         $this->load->model('m_crud');
         $this->load->library('upload');
         date_default_timezone_set('Asia/Jakarta');
-        
     }
  
     function index() {
@@ -52,7 +51,6 @@
                 'nama'      => $nama,
                 'sambutan'  => $sambutan,
                 'foto'      => $foto
-
             );
 
             $this->m_crud->insert_data($data,'sambutan');
@@ -106,8 +104,7 @@
             //     'foto'      => $foto
             // );
             
-             $where=array('id_sambutan'=>$id_sambutan
-             );
+             $where=array('id_sambutan'=>$id_sambutan);
              $this->m_crud->update_data($where,$data,'sambutan');     
              redirect('admin/kemahasiswaan/profil/sambutan?pesan=berhasil_edit');
         }else{
@@ -116,8 +113,7 @@
             $this->load->view('admin/kemahasiswaan/v_header');
             $this->load->view('admin/kemahasiswaan/profil/v_sambutanEdit',$data);
             $this->load->view('admin/kemahasiswaan/v_footer');
-        }
-       
+        }  
     }
 
     public function delete($id){
@@ -129,32 +125,11 @@
         redirect('admin/kemahasiswaan/profil/sambutan?pesan=berhasil_hapus');
     }
 
-    /*public function detail($id){
-        $where=array('id_sambutan'=>$id);
-        $this->m_crud-> update_data($where,array('sambutan'));
-        $data['sambutan']=$this->m_crud->edit_data($where,'sambutan')->row_array();
-        $this->load->view('admin/kemahasiswaan/v_header');
-        $this->load->view('admin/kemahasiswaan/profil/v_sambutanDetail',$data);
-        $this->load->view('admin/kemahasiswaan/v_footer');
-    }*/
+    public function get_notif(){
+        $kegiatan_new=$this->m_crud->edit_data(array('departemen'=>$this->session->userdata('departemen')),'kegiatan')->num_rows();
+        $data = array('kegiatan_terbaru'=>$kegiatan_terbaru);
+        echo json_encode($data);
+    }
 
-//public function proses
-
-//public function print
-
-//public function printbydate
-
-////public function cetak_arsip_keluar
-
-   public function get_notif(){
-       //departemen kemahasiswaan
-    $kegiatan_new=$this->m_crud->edit_data(array('departemen'=>$this->session->userdata('departemen')),'kegiatan')->num_rows();
-    $data = array('kegiatan_terbaru'=>$kegiatan_terbaru);
-     echo json_encode($data);
-   }
-
-//public function send_mail
-} 
-
-
+ } 
 ?>

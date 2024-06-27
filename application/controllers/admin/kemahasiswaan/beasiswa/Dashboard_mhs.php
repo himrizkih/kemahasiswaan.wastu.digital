@@ -1,13 +1,12 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class dashboard_mhs extends CI_Controller {
+class Dashboard_mhs extends CI_Controller {
 
 	 public function __construct()
      {
          parent::__construct();
          $this->load->model('m_crud');
-         
      }
 
 	public function index()
@@ -19,6 +18,5 @@ class dashboard_mhs extends CI_Controller {
 
 		$this->load->view('admin/kemahasiswaan/beasiswa/v_dashboard_mhs');
 	}
-
 
 }

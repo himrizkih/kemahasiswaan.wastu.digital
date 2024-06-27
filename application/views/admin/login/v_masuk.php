@@ -57,7 +57,7 @@
         <form action="<?php echo base_url() ?>admin/kemahasiswaan/masuk/proses" method="post">
           <div class="logo">
             <h1><a href=""><img src ="<?php echo base_url().'theme/assets/img/hero/logo-navbar.png'?>"><span>|</span>Kemahasiswaan</a></h1>
-            <h4>Sekolah Tinggi Teknologi Wastukancana</h4>
+            <br><h4>Sekolah Tinggi Teknologi Wastukancana</h4></br>
           </div>
         <br>
           <div class="form-group">

@@ -4,14 +4,13 @@
 use PhpOffice\PhpSpreadsheet\Spreadsheet;
 use PhpOffice\PhpSpreadsheet\Writer\Xlsx;
 
- Class penerima extends CI_Controller {
+ Class Penerima extends CI_Controller {
  
     function __construct() {
         parent::__construct();
         $this->load->model('m_crud');
         $this->load->model('m_post');
         date_default_timezone_set('Asia/Jakarta');
-        
     }
 
     function index() {
@@ -20,11 +19,10 @@ use PhpOffice\PhpSpreadsheet\Writer\Xlsx;
         }
         if($this->session->userdata('status')=='kmhs') {
             $data['user']=$this->m_post->get_data_penerima()->result();
-            // $data['beasiswa']=$this->m_post->get_data_beasiswa();
             $this->load->view('admin/kemahasiswaan/beasiswa/v_header_dsn');
             $this->load->view('admin/kemahasiswaan/beasiswa/v_penerima', $data);
             $this->load->view('admin/kemahasiswaan/v_footer');
-        // }
+
         }elseif($this->session->userdata('status')=='if'){
             $data['user']=$this->m_post->get_data_penerima_prodi_if(array('prodi'=>'if'),'pendaftar')->result();
             $this->load->view('admin/kemahasiswaan/beasiswa/v_header_dsn');
@@ -54,9 +52,7 @@ use PhpOffice\PhpSpreadsheet\Writer\Xlsx;
             $this->load->view('admin/kemahasiswaan/beasiswa/v_header_dsn');
             $this->load->view('admin/kemahasiswaan/beasiswa/v_penerima', $data);
             $this->load->view('admin/kemahasiswaan/v_footer');
-
         }
-        
     }
 
    	public function excel(){
@@ -148,5 +144,5 @@ use PhpOffice\PhpSpreadsheet\Writer\Xlsx;
         exit();
     }
 
-} 
+ }
 ?>

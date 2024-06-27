@@ -2,7 +2,7 @@
  
  defined('BASEPATH') OR exit('No direct script access allowed');
  
- class masuk extends CI_Controller {
+ class Masuk extends CI_Controller {
      
      public function __construct()
      {
@@ -25,13 +25,11 @@
          $username=$this->input->post('username');
          $password=$this->input->post('password');
          $encrypt=md5($password);
-        //  var_dump($encrypt);die();
          $w=array(
              'username'=>$username,
              'password'=>$encrypt
          );
          $hasil=$this->m_crud->cek_login('user',$w)->row_array();
-        //  var_dump($hasil);die();
          if ($hasil==null)
          {    
              redirect('admin/kemahasiswaan/masuk?pesan=salah');
@@ -46,9 +44,7 @@
                 'masuk'     => '1'
             );
             $this->session->set_userdata($arraydata);
-            
-            redirect('admin/kemahasiswaan/dashboard','refresh');
-            
+            redirect('admin/kemahasiswaan/dashboard','refresh');            
          }
      }
 
@@ -85,15 +81,11 @@
         }
      }
 
-     //required|matches[password_field]
-
      public function belumlogin()
      {
         redirect('admin/kemahasiswaan/masuk?pesan=belumlogin','refresh');
      }
  
  }
- 
  /* End of file Masuk.php */
-  
 ?>

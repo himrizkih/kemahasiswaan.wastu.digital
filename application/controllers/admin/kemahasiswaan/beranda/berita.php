@@ -1,12 +1,11 @@
 <?php
- Class berita extends CI_Controller {
+ Class Berita extends CI_Controller {
  
     function __construct() {
         parent::__construct();
         $this->load->model('m_crud');
         $this->load->library('upload');
         date_default_timezone_set('Asia/Jakarta');
-        
     }
  
     function index() {
@@ -21,7 +20,6 @@
             $this->load->view('admin/kemahasiswaan/v_footer');
         }
     }
-
     
     public function add()
     {
@@ -74,8 +72,8 @@
                 'berita_id_user' =>$berita_id_user,
                 'author' =>$author,
                 'berita_slug' =>$berita_slug
-
             );
+            
             $this->m_crud->insert_data($data,'berita');
             redirect('admin/kemahasiswaan/beranda/berita?pesan=berhasil_input');
             
@@ -83,7 +81,6 @@
             $this->load->view('admin/kemahasiswaan/v_header');
             $this->load->view('admin/kemahasiswaan/beranda/v_beritaInput');
             $this->load->view('admin/kemahasiswaan/v_footer');
-
         }
     }
 
@@ -153,12 +150,11 @@
             //     'berita_id_user' =>$berita_id_user,
             //     'author' =>$author,
             //     'berita_slug' =>$berita_slug
-
             // );
-             $where=array('id_berita'=>$id_berita
-             );
-             $this->m_crud->update_data($where,$data,'berita');     
-             redirect('admin/kemahasiswaan/beranda/berita?pesan=berhasil_edit');
+
+            $where=array('id_berita'=>$id_berita);
+            $this->m_crud->update_data($where,$data,'berita');     
+            redirect('admin/kemahasiswaan/beranda/berita?pesan=berhasil_edit');
         }else{
             $where=array('id_berita'=>$this->uri->segment(6));
             $data['berita']=$this->m_crud->edit_data($where,'berita')->row_array();
@@ -166,7 +162,6 @@
             $this->load->view('admin/kemahasiswaan/beranda/v_beritaEdit',$data);
             $this->load->view('admin/kemahasiswaan/v_footer');
         }
-       
     }
 
     public function delete($id){
@@ -179,32 +174,11 @@
         redirect('admin/kemahasiswaan/beranda/berita?pesan=berhasil_hapus');
     }
 
-    /*public function detail($id){
-        $where=array('id_berita'=>$id);
-        $this->m_crud-> update_data($where,array('berita'));
-        $data['berita']=$this->m_crud->edit_data($where,'berita')->row_array();
-        $this->load->view('admin/kemahasiswaan/v_header');
-        $this->load->view('admin/kemahasiswaan/beranda/v_beritaDetail',$data);
-        $this->load->view('admin/kemahasiswaan/v_footer');
-    }*/
+    public function get_notif(){
+        $kegiatan_terbaru=$this->m_crud->edit_data(array('departemen'=>$this->session->userdata('departemen')),'kegiatan')->num_rows();
+        $data = array('kegiatan_terbaru'=>$kegiatan_terbaru);
+        echo json_encode($data);
+    }
 
-//public function proses
-
-//public function print
-
-//public function printbydate
-
-////public function cetak_arsip_keluar
-
-   public function get_notif(){
-       //departemen kemahasiswaan
-    $kegiatan_terbaru=$this->m_crud->edit_data(array('departemen'=>$this->session->userdata('departemen')),'kegiatan')->num_rows();
-    $data = array('kegiatan_terbaru'=>$kegiatan_terbaru);
-     echo json_encode($data);
-   }
-
-//public function send_mail
-} 
-
-
+ }
 ?>

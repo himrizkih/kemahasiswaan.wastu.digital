@@ -10935,24 +10935,25 @@ body.sidebar-toggled footer.sticky-footer {
 }
 
 .logo h1 {
-  font-size: 38px;
   margin: -6px;
   padding: 1;
   padding-top: 10px;
-  padding-left: 25px;
   line-height: 1;
   font-weight: bold;
+  text-align: center;
 }
 
 .logo h4 {
-  font-size: 13px;
+  font-size: 10px;
   margin: 0;
   padding: 0;
-  padding-left: 76px;
-  padding-bottom: 18px;
+  margin-top: -23px;
+  padding-left: 60px;
+  padding-bottom: 10px;
   line-height: 0;
   font-weight: bold;
   color: #000;
+  text-align: center;
 }
 
 .logo h1 span {
@@ -10960,12 +10961,14 @@ body.sidebar-toggled footer.sticky-footer {
   font-size: 38px;
   line-height: 1;
   font-weight: bold;
+  text-align: center;
 }
 
 .logo h1 a, .logo h1 a:hover {
   color: #000;
-  font-size: 32px;
+  font-size: 24px;
   text-decoration: none;
+  text-align: center;
 }
 
 .logo img {
@@ -10974,6 +10977,7 @@ body.sidebar-toggled footer.sticky-footer {
   padding-top: 10px;
   max-height: 64px;
   border-radius: 50%;
+  text-align: center;
 }
 
 .link h5 {

@@ -1,12 +1,11 @@
 <?php
- Class strukturorganisasi extends CI_Controller {
+ Class Strukturorganisasi extends CI_Controller {
  
     function __construct() {
         parent::__construct();
         $this->load->model('m_crud');
         $this->load->library('upload');
         date_default_timezone_set('Asia/Jakarta');
-        
     }
  
     function index() {
@@ -21,7 +20,6 @@
             $this->load->view('admin/kemahasiswaan/v_footer');
         }
     }
-
     
     public function add()
     {
@@ -49,7 +47,6 @@
                 $config['new_image']        = '.theme/assets/img/strukturorganisasi/'.$gambar['file_name'];
             }
 
-
             $this->load->library('upload', $config);
             $this->upload->initialize($config);
             $this->load->library('image_lib', $config);
@@ -64,7 +61,6 @@
            
             $data = array(
                 'gambar'      => $gambar
-
             );
 
             $this->m_crud->insert_data($data,'strukturorganisasi');
@@ -74,7 +70,6 @@
             $this->load->view('admin/kemahasiswaan/v_header');
             $this->load->view('admin/kemahasiswaan/profil/v_strukturorganisasiInput');
             $this->load->view('admin/kemahasiswaan/v_footer');
-
         }
     }
 
@@ -101,22 +96,20 @@
             } else {
                 $gambar = $this->upload->data('file_name');
             }
-             // var_dump($deskripsi);die;
            }
 
-            // var_dump($_FILES);die;
             $data = array(
                 'gambar'      => $gambar
 
             );
-             $where=array('id_strukturorganisasi'=>$id_strukturorganisasi
-             );
-             $this->m_crud->update_data($where,$data,'strukturorganisasi');     
-             redirect('admin/kemahasiswaan/profil/strukturorganisasi?pesan=berhasil_edit');
+            
+            $where=array('id_strukturorganisasi'=>$id_strukturorganisasi);
+            $this->m_crud->update_data($where,$data,'strukturorganisasi');
+            redirect('admin/kemahasiswaan/profil/strukturorganisasi?pesan=berhasil_edit');
+            
         }else{
             $where=array('id_strukturorganisasi'=>$this->uri->segment(6));
             $data['strukturorganisasi']=$this->m_crud->edit_data($where,'strukturorganisasi')->row_array();
-            // var_dump($where);die;
             $this->load->view('admin/kemahasiswaan/v_header');
             $this->load->view('admin/kemahasiswaan/profil/v_strukturorganisasiEdit',$data);
             $this->load->view('admin/kemahasiswaan/v_footer');
@@ -133,32 +126,11 @@
         redirect('admin/kemahasiswaan/profil/strukturorganisasi?pesan=berhasil_hapus');
     }
 
-    /*public function detail($id){
-        $where=array('id_strukturorganisasi'=>$id);
-        $this->m_crud-> update_data($where,array('strukturorganisasi'));
-        $data['strukturorganisasi']=$this->m_crud->edit_data($where,'strukturorganisasi')->row_array();
-        $this->load->view('admin/kemahasiswaan/v_header');
-        $this->load->view('admin/kemahasiswaan/profil/v_strukturorganisasiDetail',$data);
-        $this->load->view('admin/kemahasiswaan/v_footer');
-    }*/
+    public function get_notif(){
+        $kegiatan_new=$this->m_crud->edit_data(array('departemen'=>$this->session->userdata('departemen')),'kegiatan')->num_rows();
+        $data = array('kegiatan_terbaru'=>$kegiatan_terbaru);
+        echo json_encode($data);
+    }
 
-//public function proses
-
-//public function print
-
-//public function printbydate
-
-////public function cetak_arsip_keluar
-
-   public function get_notif(){
-       //departemen kemahasiswaan
-    $kegiatan_new=$this->m_crud->edit_data(array('departemen'=>$this->session->userdata('departemen')),'kegiatan')->num_rows();
-    $data = array('kegiatan_terbaru'=>$kegiatan_terbaru);
-     echo json_encode($data);
-   }
-
-//public function send_mail
-} 
-
-
+ }
 ?>

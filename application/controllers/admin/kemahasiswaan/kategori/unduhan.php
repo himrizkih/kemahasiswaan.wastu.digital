@@ -1,13 +1,12 @@
 <?php
- Class unduhan extends CI_Controller {
+ Class Unduhan extends CI_Controller {
  
     function __construct() {
         parent::__construct();
         $this->load->model('m_crud');
         $this->load->library('upload');
         $this->load->helper('download');
-        date_default_timezone_set('Asia/Jakarta');
-        
+        date_default_timezone_set('Asia/Jakarta');       
     }
  
     function index() {
@@ -22,7 +21,6 @@
             $this->load->view('admin/kemahasiswaan/v_footer');
         }
     }
-
     
     public function add()
     {
@@ -49,8 +47,8 @@
                 'nama' =>$nama,
                 'tanggal' =>$tanggal,
                 'lampiran' =>$lampiran
-
             );
+
             $this->m_crud->insert_data($data,'unduhan');
             redirect('admin/kemahasiswaan/kategori/unduhan?pesan=berhasil_input');
             
@@ -58,7 +56,6 @@
             $this->load->view('admin/kemahasiswaan/beasiswa/v_header_dsn');
             $this->load->view('admin/kemahasiswaan/kategori/v_unduhanInput');
             $this->load->view('admin/kemahasiswaan/v_footer');
-
         }
     }
 
@@ -88,21 +85,18 @@
                 'nama' =>$nama,
                 'tanggal' =>$tanggal,
                 'lampiran' =>$lampiran
-
             );
-             $where=array('id_unduhan'=>$id_unduhan
-             );
-             $this->m_crud->update_data($where,$data,'unduhan');     
-             redirect('admin/kemahasiswaan/kategori/unduhan?pesan=berhasil_edit');
+
+            $where=array('id_unduhan'=>$id_unduhan);
+            $this->m_crud->update_data($where,$data,'unduhan');     
+            redirect('admin/kemahasiswaan/kategori/unduhan?pesan=berhasil_edit');
         }else{
             $where=array('id_unduhan'=>$this->uri->segment(6));
             $data['unduhan']=$this->m_crud->edit_data($where,'unduhan')->row_array();
-            // var_dump($where);die;
             $this->load->view('admin/kemahasiswaan/beasiswa/v_header_dsn');
             $this->load->view('admin/kemahasiswaan/kategori/v_unduhanEdit',$data);
             $this->load->view('admin/kemahasiswaan/v_footer');
         }
-       
     }
 
     public function delete($id){
@@ -127,32 +121,11 @@
         redirect('admin/files');
     }
 
-    /*public function detail($id){
-        $where=array('id_unduhan'=>$id);
-        $this->m_crud-> update_data($where,array('unduhan'));
-        $data['unduhan']=$this->m_crud->edit_data($where,'unduhan')->row_array();
-        $this->load->view('admin/kemahasiswaan/v_header');
-        $this->load->view('admin/kemahasiswaan/kategori/v_unduhanDetail',$data);
-        $this->load->view('admin/kemahasiswaan/v_footer');
-    }*/
+    public function get_notif(){
+        $kegiatan_terbaru=$this->m_crud->edit_data(array('departemen'=>$this->session->userdata('departemen')),'kegiatan')->num_rows();
+        $data = array('kegiatan_terbaru'=>$kegiatan_terbaru);
+        echo json_encode($data);
+    }
 
-//public function proses
-
-//public function print
-
-//public function printbydate
-
-////public function cetak_arsip_keluar
-
-   public function get_notif(){
-       //departemen kemahasiswaan
-    $kegiatan_terbaru=$this->m_crud->edit_data(array('departemen'=>$this->session->userdata('departemen')),'kegiatan')->num_rows();
-    $data = array('kegiatan_terbaru'=>$kegiatan_terbaru);
-     echo json_encode($data);
-   }
-
-//public function send_mail
-} 
-
-
+ }
 ?>

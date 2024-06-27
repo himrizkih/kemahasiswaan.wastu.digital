@@ -1,25 +1,14 @@
 <?php
- Class beasiswa extends CI_Controller {
+ Class Beasiswa extends CI_Controller {
  
     function __construct() {
         parent::__construct();
         $this->load->model('m_crud');
         $this->load->library('upload');
         date_default_timezone_set('Asia/Jakarta');
-        
     }
  
     function index() {
-        // if ($this->session->userdata('masuk')!=1) {
-        //      redirect('admin/kemahasiswaan/masuk?pesan=belumlogin','refresh');
-        //  }
-        // if (
-        // $this->session->userdata('departemen')=='Kemahasiswaan') {
-        //     $data['user']=$this->m_crud->edit_data_v2('beasiswa')->result();
-        //     $this->load->view('admin/kemahasiswaan/v_header');
-        //     $this->load->view('admin/kemahasiswaan/kategori/v_beasiswa', $data);
-        //     $this->load->view('admin/kemahasiswaan/v_footer');
-        // }
         if ($this->session->userdata('masuk')!=1) {
              redirect('admin/kemahasiswaan/masuk_bea_dsn?pesan=belumlogin','refresh');
          }
@@ -79,7 +68,6 @@
             } else {
                 $gambar = $this->upload->data('file_name');
             }
-            // var_dump($redaksi);die;
            }
            
             $data = array(
@@ -115,7 +103,6 @@
     public function edit()
     {
         if (isset($_POST['update'])) {
-          // var_dump($_POST);die;
            $id_beasiswa=$this->input->post('id');
            $nama=$this->input->post('nama');
            $persyaratan=$this->input->post('persyaratan');
@@ -154,9 +141,7 @@
             } else {
                 $gambar = $this->upload->data('file_name');
             }
-              // var_dump($redaksi);die;
            }
-            // var_dump($_FILES);die;
             $data = array(
                 'nama' =>$nama,
                 'persyaratan' =>$persyaratan,
@@ -177,19 +162,16 @@
                 'kuota_teks' =>$kuota_teks
 
             );
-             $where=array('id_beasiswa'=>$id_beasiswa
-             );
+             $where=array('id_beasiswa'=>$id_beasiswa);
              $this->m_crud->update_data($where,$data,'beasiswa');     
              redirect('admin/kemahasiswaan/kategori/beasiswa?pesan=berhasil_edit');
         }else{
             $where=array('id_beasiswa'=>$this->uri->segment(6));
             $data['beasiswa']=$this->m_crud->edit_data($where,'beasiswa')->row_array();
-            // var_dump($where);die;
             $this->load->view('admin/kemahasiswaan/beasiswa/v_header_dsn');
             $this->load->view('admin/kemahasiswaan/kategori/v_beasiswaEdit',$data);
             $this->load->view('admin/kemahasiswaan/v_footer');
         }
-       
     }
 
     public function delete($id){
@@ -201,32 +183,11 @@
         redirect('admin/kemahasiswaan/kategori/beasiswa?pesan=berhasil_hapus');
     }
 
-    /*public function detail($id){
-        $where=array('id_beasiswa'=>$id);
-        $this->m_crud-> update_data($where,array('beasiswa'));
-        $data['beasiswa']=$this->m_crud->edit_data($where,'beasiswa')->row_array();
-        $this->load->view('admin/kemahasiswaan/v_header');
-        $this->load->view('admin/kemahasiswaan/kategori/v_beasiswaDetail',$data);
-        $this->load->view('admin/kemahasiswaan/v_footer');
-    }*/
+    public function get_notif(){
+        $kegiatan_terbaru=$this->m_crud->edit_data(array('departemen'=>$this->session->userdata('departemen')),'kegiatan')->num_rows();
+        $data = array('kegiatan_terbaru'=>$kegiatan_terbaru);
+        echo json_encode($data);
+    }
 
-//public function proses
-
-//public function print
-
-//public function printbydate
-
-////public function cetak_arsip_keluar
-
-   public function get_notif(){
-       //departemen kemahasiswaan
-    $kegiatan_terbaru=$this->m_crud->edit_data(array('departemen'=>$this->session->userdata('departemen')),'kegiatan')->num_rows();
-    $data = array('kegiatan_terbaru'=>$kegiatan_terbaru);
-     echo json_encode($data);
-   }
-
-//public function send_mail
-} 
-
-
+ }
 ?>

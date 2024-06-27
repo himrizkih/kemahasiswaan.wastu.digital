@@ -2,7 +2,7 @@
  
  defined('BASEPATH') OR exit('No direct script access allowed');
  
- class masuk_bea_mhs_daftar extends CI_Controller {
+ class Masuk_bea_mhs_daftar extends CI_Controller {
      
      public function __construct()
      {
@@ -25,13 +25,11 @@
          $nim=$this->input->post('username');
          $password=$this->input->post('password');
          $encrypt=md5($password);
-        //  var_dump($encrypt);die();
          $w=array(
              'nim'=>$nim,
              'password'=>$encrypt
          );
          $hasil=$this->m_crud->cek_login('mahasiswa',$w)->row_array();
-        //  var_dump($hasil);die();
          if ($hasil==null)
          {    
              redirect('./masuk?pesan=salah');
@@ -46,16 +44,13 @@
                 'masuk'     => '1'
             );
             $this->session->set_userdata($arraydata);
-             // var_dump($hasil);die();
             redirect('./beasiswa_daftar','refresh');
-            
          }
      }
 
      public function logout()
      {
         $this->session->sess_destroy();
-        // redirect('./masuk?pesan=logout','refresh');
         redirect('./beasiswa','refresh');
      }
 
@@ -65,7 +60,5 @@
      }
  
  }
- 
  /* End of file masuk_bea_mhs.php */
-  
 ?>

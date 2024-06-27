@@ -1,11 +1,10 @@
 <?php
- Class faq extends CI_Controller {
+ Class Faq extends CI_Controller {
  
     function __construct() {
         parent::__construct();
         $this->load->model('m_crud');
         date_default_timezone_set('Asia/Jakarta');
-        
     }
  
     function index() {
@@ -20,7 +19,6 @@
             $this->load->view('admin/kemahasiswaan/v_footer');
         } 
     }
-
     
     public function add()
     {
@@ -32,8 +30,8 @@
             $data = array(
                 'pertanyaan' => $pertanyaan,
                 'jawaban' => $jawaban
-
             );
+
             $this->m_crud->insert_data($data,'faq');
             redirect('admin/kemahasiswaan/faq?pesan=berhasil_input');
 
@@ -55,20 +53,17 @@
                 'jawaban' => $jawaban
             );
 
-            $where=array('id_faq'=>$id_faq
-            );
+            $where=array('id_faq'=>$id_faq);
             $this->m_crud->update_data($where,$data,'faq');
             redirect('admin/kemahasiswaan/faq?pesan=berhasil_edit');
 
         }else{
             $where=array('id_faq'=>$this->uri->segment(5));
             $data['faq']=$this->m_crud->edit_data($where,'faq')->row_array();
-            // var_dump($where);die;
             $this->load->view('admin/kemahasiswaan/v_header');
             $this->load->view('admin/kemahasiswaan/publikasi/v_faqEdit',$data);
             $this->load->view('admin/kemahasiswaan/v_footer');
         }
-       
     }
     
     public function delete($id){
@@ -77,32 +72,11 @@
         redirect('admin/kemahasiswaan/faq?pesan=berhasil_hapus');
     }
 
-    /*public function detail($id){
-        $where=array('id_faq'=>$id);
-        $this->m_crud-> update_data($where,array('faq'));
-        $data['faq']=$this->m_crud->edit_data($where,'faq')->row_array();
-        $this->load->view('admin/kemahasiswaan/v_header');
-        $this->load->view('admin/kemahasiswaan/publikasi/v_faqDetail',$data);
-        $this->load->view('admin/kemahasiswaan/v_footer');
-    }*/
+    public function get_notif(){
+        $kegiatan_terbaru=$this->m_crud->edit_data(array('departemen'=>$this->session->userdata('departemen')),'kegiatan')->num_rows();
+        $data = array('kegiatan_terbaru'=>$kegiatan_terbaru);
+        echo json_encode($data);
+    }
 
-//public function proses
-   
-//public function print
-
-//public function printbydate
-
-////public function cetak_arsip_keluar
-
-   public function get_notif(){
-       //departemen kemahasiswaan
-    $kegiatan_terbaru=$this->m_crud->edit_data(array('departemen'=>$this->session->userdata('departemen')),'kegiatan')->num_rows();
-    $data = array('kegiatan_terbaru'=>$kegiatan_terbaru);
-     echo json_encode($data);
-   }
-
-//public function send_mail
-} 
-
-
+ } 
 ?>

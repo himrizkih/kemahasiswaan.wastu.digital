@@ -1,5 +1,5 @@
 <?php
- Class kegiatan extends CI_Controller {
+ Class Kegiatan extends CI_Controller {
  
     function __construct() {
         parent::__construct();
@@ -7,7 +7,6 @@
         $this->load->model('m_post');
         $this->load->library('upload');
         date_default_timezone_set('Asia/Jakarta');
-        
     }
  
     function index() {
@@ -74,7 +73,6 @@
             $this->load->view('admin/kemahasiswaan/v_header');
             $this->load->view('admin/kemahasiswaan/publikasi/v_kegiatan', $data);
             $this->load->view('admin/kemahasiswaan/v_footer');
-
         }
     }
 
@@ -137,8 +135,8 @@
                 'kegiatan_id_user' =>$kegiatan_id_user,
                 'ormawa' =>$ormawa,
                 'kegiatan_slug' =>$kegiatan_slug
-
             );
+
             $this->m_crud->insert_data($data,'kegiatan');
             redirect('admin/kemahasiswaan/kegiatan?pesan=berhasil_input');
             
@@ -161,12 +159,6 @@
            $tanggal=$this->input->post('tanggal');
            $deskripsi=$this->input->post('deskripsi');
            $status=$this->input->post('status');
-
-           // $id=$this->session->userdata('id_user');
-           // $user=$this->m_crud->get_pengguna_login($id);
-           // $w=$user->row_array();
-           // $kegiatan_id_user=$w['id_user'];
-           // $ormawa=$w['organisasi'];
 
            $string   = preg_replace('/[^a-zA-Z0-9 \&%|{.}=,?!*()"-_+$@;<>\']/', '', $nama);
            $trim     = trim($string);
@@ -227,14 +219,12 @@
             //     'kegiatan_slug' =>$kegiatan_slug
             // );
 
-             $where=array('id_kegiatan'=>$id_kegiatan
-             );
+             $where=array('id_kegiatan'=>$id_kegiatan);
              $this->m_crud->update_data($where,$data,'kegiatan');     
              redirect('admin/kemahasiswaan/kegiatan?pesan=berhasil_edit');
         }else{
             $where=array('id_kegiatan'=>$this->uri->segment(5));
             $data['kegiatan']=$this->m_crud->edit_data($where,'kegiatan')->row_array();
-            // var_dump($where);die;
             $this->load->view('admin/kemahasiswaan/v_header');
             $this->load->view('admin/kemahasiswaan/publikasi/v_kegiatanEdit',$data);
             $this->load->view('admin/kemahasiswaan/v_footer');
@@ -272,6 +262,5 @@
 
 //public function send_mail
 
-} 
-
+ }
 ?>

@@ -4,7 +4,6 @@
     function __construct() {
         parent::__construct();
         $this->load->model('m_crud');
-        
     }
  
     function index() {
@@ -16,7 +15,6 @@
         $this->load->view('admin/user/v_user', $data);
         $this->load->view('admin/v_footer');
     }
-
     
     public function add()
     {
@@ -30,7 +28,6 @@
            $username=$this->input->post('username');
            $password=$this->input->post('password');
            $email=$this->input->post('email');
-
            
             $data = array(
                 'nidn'=>$nidn,
@@ -62,7 +59,6 @@
             $departemen=$this->input->post('departemen');
             $jabatan=$this->input->post('jabatan');
             $username=$this->input->post('username');
-
             
              $data = array(
                  'Nidn' =>$nidn,
@@ -83,14 +79,11 @@
             $this->load->view('admin/user/v_editUser',$data);
             $this->load->view('admin/v_footer');
         }
-       
     }
     public function delete($id){
         $where=array('id_user'=>$id);
         $this->m_crud->delete_data($where,'user');
         redirect('user?pesan=berhasil_hapus');
     }
- 
- 
-} 
+ } 
 ?>

@@ -2,23 +2,21 @@
  
  defined('BASEPATH') OR exit('No direct script access allowed');
  
- class dashboard extends CI_Controller {
+ class Dashboard extends CI_Controller {
  
      
      public function __construct()
      {
          parent::__construct();
          $this->load->model('m_crud');
-         
      }
       
      public function index()
      {  
          if ($this->session->userdata('masuk')!=1) {
-             
              redirect('admin/kemahasiswaan/masuk?pesan=belumlogin','refresh');
-             
          }
+
     if($this->session->userdata('departemen')=='Kemahasiswaan') {
       /* Dashboard Kemahasiswaan */
         /* Dashboard Kemahasiswaan - Total Data Kegiatan */
@@ -313,7 +311,5 @@
      }
  
  }
- 
  /* End of file Dashboard.php */
-  
 ?>

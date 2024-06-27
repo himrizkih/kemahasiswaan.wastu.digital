@@ -2,7 +2,7 @@
  
  defined('BASEPATH') OR exit('No direct script access allowed');
  
- class masuk_bea_dsn extends CI_Controller {
+ class Masuk_bea_dsn extends CI_Controller {
      
      public function __construct()
      {
@@ -25,13 +25,11 @@
          $nidn=$this->input->post('username');
          $password=$this->input->post('password');
          $encrypt=md5($password);
-        //  var_dump($encrypt);die();
          $w=array(
              'nidn'=>$nidn,
              'password'=>$encrypt
          );
          $hasil=$this->m_crud->cek_login('dosen',$w)->row_array();
-         // var_dump($hasil);die();
          if ($hasil==null)
          {    
              redirect('./login?pesan=salah');
@@ -45,9 +43,7 @@
                 'masuk'     => '1'
             );
             $this->session->set_userdata($arraydata);
-             // var_dump($hasil);die();
             redirect('./dashboard','refresh');
-            
          }
      }
 
@@ -63,7 +59,5 @@
      }
  
  }
- 
  /* End of file masuk_bea_dsn.php */
-  
 ?>

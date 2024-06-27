@@ -1,5 +1,5 @@
 <?php
- Class pendaftar extends CI_Controller {
+ Class Pendaftar extends CI_Controller {
  
     function __construct() {
         parent::__construct();
@@ -7,7 +7,6 @@
         $this->load->model('m_post');
         $this->load->library('upload');
         date_default_timezone_set('Asia/Jakarta');
-        
     }
  
     function index() {
@@ -21,7 +20,7 @@
             $this->load->view('admin/kemahasiswaan/beasiswa/v_header_dsn');
             $this->load->view('admin/kemahasiswaan/beasiswa/v_pendaftar', $data);
             $this->load->view('admin/kemahasiswaan/v_footer');
-        // }
+
         }elseif($this->session->userdata('status')=='if'){
             $data['user']=$this->m_post->get_data_pendaftar_prodi_if(array('prodi'=>'if'),'pendaftar')->result();
             $this->load->view('admin/kemahasiswaan/beasiswa/v_header_dsn');
@@ -51,11 +50,8 @@
             $this->load->view('admin/kemahasiswaan/beasiswa/v_header_dsn');
             $this->load->view('admin/kemahasiswaan/beasiswa/v_pendaftar', $data);
             $this->load->view('admin/kemahasiswaan/v_footer');
-
         }
-        
     }
-
     
     public function add()
     {
@@ -100,6 +96,7 @@
                 'tanggal'=>$tanggal,
                 'lampiran'=>$lampiran
             );
+
             $this->m_crud->insert_data($data,'pendaftar');
             redirect('admin/kemahasiswaan/beasiswa/pendaftar?pesan=berhasil_input', 'refresh');
             
@@ -107,7 +104,6 @@
             $this->load->view('admin/kemahasiswaan/beasiswa/v_header_dsn');
             $this->load->view('admin/kemahasiswaan/beasiswa/v_pendaftarInput');
             $this->load->view('admin/kemahasiswaan/v_footer');
-
         }
     }
 
@@ -150,10 +146,10 @@
                 'tanggal'=>$tanggal,
                 'lampiran'=>$lampiran
             );
-             $where=array('id_pendaftar'=>$id_pendaftar
-             );
-             $this->m_crud->update_data($where,$data,'pendaftar');
-             redirect('admin/kemahasiswaan/beasiswa/pendaftar?pesan=berhasil_edit');
+
+            $where=array('id_pendaftar'=>$id_pendaftar);
+            $this->m_crud->update_data($where,$data,'pendaftar');
+            redirect('admin/kemahasiswaan/beasiswa/pendaftar?pesan=berhasil_edit');
         }else{
             $where=array('id_pendaftar'=>$this->uri->segment(5));
             $data['pendaftar']=$this->m_crud->edit_data($where,'pendaftar')->row_array();
@@ -161,8 +157,8 @@
             $this->load->view('admin/kemahasiswaan/beasiswa/v_pendaftarEdit',$data);
             $this->load->view('admin/kemahasiswaan/v_footer');
         }
-       
     }
+
     public function delete($id){
         $where=array('id_pendaftar'=>$id_pendaftar);
         $this->m_crud->delete_data($where,'pendaftar');
@@ -248,8 +244,8 @@
             $this->m_crud->update_data(array('id_pendaftar'=>$id),array('status'=>3,'status_baca'=>0),'pendaftar');
             $this->insert_history($id,'reject',$this->session->userdata('nama'));
             redirect('admin/kemahasiswaan/beasiswa/pendaftar?pesan=berhasil_tolak','refresh');
-            }  
+            }
         }
 
-} 
+ }
 ?>

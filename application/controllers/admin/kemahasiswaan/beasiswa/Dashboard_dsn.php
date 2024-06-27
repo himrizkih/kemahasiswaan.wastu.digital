@@ -2,14 +2,12 @@
  
  defined('BASEPATH') OR exit('No direct script access allowed');
  
- class dashboard_dsn extends CI_Controller {
- 
-     
+ class Dashboard_dsn extends CI_Controller {
+
     public function __construct()
     {
         parent::__construct();
         $this->load->model('m_crud');
-         
     }
       
     public function index(){
@@ -142,7 +140,6 @@
         /* End Dashboard KaProdi TEKS */
         }
     }
-}
+ }
  /* End of file Dashboard.php */
-  
 ?>
