@@ -23,5 +23,4 @@ class kegiatan extends CI_Controller {
 		$data['kegiatan']=$this->m_post->get_kegiatan_by_slug($slug);
 		$this->load->view('v_kegiatan_detail',$data);
 	}
-
 }

@@ -93,12 +93,12 @@
       if($this->session->userdata('departemen')=='Kemahasiswaan'){ ?>
       
       <!-- Sidebar Menu Master Data -->
-      <!-- <li class="nav-item">
-        <a class="nav-link" href="<?php echo base_url() ?>admin/approval/user">
+      <li class="nav-item">
+        <a class="nav-link" href="<?php echo base_url() ?>admin/user">
           <i class="fas fa-fw fa-users"></i>
           <span>Master Data</span>
         </a>
-      </li> -->
+      </li>
       <!-- End Menu Master Data -->
 
       <!-- Sidebar Menu Beranda -->

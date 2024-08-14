@@ -12,10 +12,8 @@ class Dashboard_mhs extends CI_Controller {
 	public function index()
 	{
 		if ($this->session->userdata('masuk')!=1) {
-             
              redirect('admin/kemahasiswaan/masuk_bea_mhs?pesan=belumlogin','refresh');
          }
-
 		$this->load->view('admin/kemahasiswaan/beasiswa/v_dashboard_mhs');
 	}
 

@@ -18,28 +18,24 @@ class beasiswa extends CI_Controller {
 
 	public function lokal()
 	{
-		// $data['beasiswa']=$this->m_post->get_data_beasiswa();
 		$data['beasiswa']=$this->m_post->get_data_beasiswa_lokal();
 		$this->load->view('kategori/v_beasiswa_lokal', $data);
 	}
 
 	public function wilayah()
 	{
-		// $data['beasiswa']=$this->m_post->get_data_beasiswa();
 		$data['beasiswa']=$this->m_post->get_data_beasiswa_wilayah();
 		$this->load->view('kategori/v_beasiswa_wilayah', $data);
 	}
 
 	public function nasional()
 	{
-		// $data['beasiswa']=$this->m_post->get_data_beasiswa();
 		$data['beasiswa']=$this->m_post->get_data_beasiswa_nasional();
 		$this->load->view('kategori/v_beasiswa_nasional', $data);
 	}
 
 	public function internasional()
 	{
-		// $data['beasiswa']=$this->m_post->get_data_beasiswa();
 		$data['beasiswa']=$this->m_post->get_data_beasiswa_internasional();
 		$this->load->view('kategori/v_beasiswa_internasional', $data);
 	}	
@@ -92,5 +88,4 @@ class beasiswa extends CI_Controller {
 	public function beasiswa_internasional_faq_detail(){
 		$this->load->view('kategori/v_beasiswa_faq_detail');
 	}
-
 }

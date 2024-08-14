@@ -22,5 +22,4 @@ class berita extends CI_Controller {
 		$data['berita']=$this->m_post->get_berita_by_slug($slug);
 		$this->load->view('v_berita_detail',$data);
 	}
-
 }

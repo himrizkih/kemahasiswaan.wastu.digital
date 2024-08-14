@@ -8,7 +8,6 @@ class unduhan extends CI_Controller {
         $this->load->model('m_post');
         $this->load->helper('download');
         date_default_timezone_set('Asia/Jakarta');
-        
     }
 
 	public function index()

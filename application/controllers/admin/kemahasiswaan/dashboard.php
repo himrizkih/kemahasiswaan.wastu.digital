@@ -3,19 +3,18 @@
  defined('BASEPATH') OR exit('No direct script access allowed');
  
  class Dashboard extends CI_Controller {
- 
-     
-     public function __construct()
-     {
-         parent::__construct();
-         $this->load->model('m_crud');
-     }
+
+    public function __construct()
+    {
+        parent::__construct();
+        $this->load->model('m_crud');
+    }
       
-     public function index()
-     {  
-         if ($this->session->userdata('masuk')!=1) {
-             redirect('admin/kemahasiswaan/masuk?pesan=belumlogin','refresh');
-         }
+    public function index()
+    {  
+        if ($this->session->userdata('masuk')!=1) {
+            redirect('admin/kemahasiswaan/masuk?pesan=belumlogin','refresh');
+        }
 
     if($this->session->userdata('departemen')=='Kemahasiswaan') {
       /* Dashboard Kemahasiswaan */
@@ -306,10 +305,8 @@
         $this->load->view('admin/kemahasiswaan/v_header');
         $this->load->view('admin/kemahasiswaan/v_dashboard_all',$data);
         $this->load->view('admin/kemahasiswaan/v_footer');
-
         }
      }
- 
  }
  /* End of file Dashboard.php */
 ?>

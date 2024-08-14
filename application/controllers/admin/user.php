@@ -7,83 +7,113 @@
     }
  
     function index() {
-        if ($this->session->userdata('login')!=1) {   
+        if ($this->session->userdata('masuk')!=1) {   
             redirect('login?pesan=belumlogin','refresh');  
         }
-        $data['user']=$this->m_crud->get_data('user')->result();
-        $this->load->view('admin/v_header');
+        $data['user']=$this->m_crud->edit_data_v2('user')->result();
+        $this->load->view('admin/kemahasiswaan/v_header');
         $this->load->view('admin/user/v_user', $data);
-        $this->load->view('admin/v_footer');
+        $this->load->view('admin/kemahasiswaan/v_footer');
     }
-    
+
     public function add()
     {
         if (isset($_POST['simpan'])) {
-           $nidn=$this->input->post('nidn');
-           $nik=$this->input->post('nik');
            $nama=$this->input->post('nama');
            $alamat=$this->input->post('alamat');
            $departemen=$this->input->post('departemen');
-           $jabatan=$this->input->post('jabatan');
+           $organisasi=$this->input->post('organisasi');
+           $keterangan=$this->input->post('keterangan');
+           $email=$this->input->post('email');
            $username=$this->input->post('username');
            $password=$this->input->post('password');
-           $email=$this->input->post('email');
-           
+
+        //    $foto = $_FILES['foto'];
+        //    if ($foto=''){}else{
+        //     $config['upload_path'] = './upload/images/';
+        //     $config['allowed_types'] = 'png';
+        //     $this->load->library('upload', $config);
+        //     if(!$this->upload->do_upload('foto')){
+        //         echo "Upload Gagal"; die();
+        //     } else {
+        //         $foto = $this->upload->data('file_name');
+        //     }
+        //    }
+
             $data = array(
-                'nidn'=>$nidn,
-                'nik'=>$nik,
                 'nama'=>$nama,
                 'alamat'=>$alamat,
                 'departemen'=>$departemen,
-                'jabatan'=>$jabatan,
+                'organisasi'=>$organisasi,
+                'keterangan'=>$keterangan,
                 'email'=>$email,
                 'username'=>$username,
-                'password'=>md5($password)
+                'password'=>md5($password),
+                // 'foto'=>$foto['name']
             );
+
             $this->m_crud->insert_data($data,'user');
+            redirect('admin/user?pesan=berhasil_input');
             
-            redirect('user?pesan=berhasil_input');
-            
-        }else{
-            $this->load->view('admin/v_header');
+        } else {
+            $this->load->view('admin/kemahasiswaan/v_header');
             $this->load->view('admin/user/v_inputUser');
-            $this->load->view('admin/v_footer');
+            $this->load->view('admin/kemahasiswaan/v_footer');
         }
     }
 
     public function edit(){
         if (isset($_POST['update'])) {
-            $nidn=$this->input->post('nidn');
-            $nik=$this->input->post('nik');
+            $id_user=$this->input->post('id');
             $nama=$this->input->post('nama');
+            $alamat=$this->input->post('alamat');
             $departemen=$this->input->post('departemen');
-            $jabatan=$this->input->post('jabatan');
+            $organisasi=$this->input->post('organisasi');
+            $keterangan=$this->input->post('keterangan');
+            $email=$this->input->post('email');
             $username=$this->input->post('username');
+            $password=$this->input->post('password');
+
+        //     $foto = $_FILES['foto'];
+        //     if ($foto=''){}else{
+        //     $config['upload_path'] = './upload/images/';
+        //     $config['allowed_types'] = 'png';
+        //     $this->load->library('upload', $config);
+        //     if(!$this->upload->do_upload('foto')){
+        //         echo "Upload Gagal"; die();
+        //     } else {
+        //         $foto = $this->upload->data('file_name');
+        //     }
+        //    }
             
              $data = array(
-                 'Nidn' =>$nidn,
-                 'Nik' =>$nik,
-                 'nama'=>$nama,
-                 'departemen'=>$departemen,
-                 'jabatan'=>$jabatan,
-                 'username'=>$username
+                'nama'=>$nama,
+                'alamat'=>$alamat,
+                'departemen'=>$departemen,
+                'organisasi'=>$organisasi,
+                'keterangan'=>$keterangan,
+                'email'=>$email,
+                'username'=>$username,
+                'password'=>md5($password),
+                // 'foto'=>$foto['name']
              );
-             $where=array('id_user'=>$this->input->post('id')
-             );
-             $data['user']=$this->m_crud->update_data($where,$data,'user');
-             redirect('user?pesan=berhasil_edit');
-        }else{
-            $where=array('id_user'=>$this->uri->segment(3));
+
+             $where=array('id_user'=>$id_user);
+             $this->m_crud->update_data($where,$data,'user');
+             redirect('admin/user?pesan=berhasil_edit');
+        } else {
+            $where=array('id_user'=>$this->uri->segment(4));
             $data['user']=$this->m_crud->edit_data($where,'user')->row_array();
-            $this->load->view('admin/v_header');
+            $this->load->view('admin/kemahasiswaan/v_header');
             $this->load->view('admin/user/v_editUser',$data);
-            $this->load->view('admin/v_footer');
+            $this->load->view('admin/kemahasiswaan/v_footer');
         }
     }
-    public function delete($id){
+    
+    public function delete($id) {
         $where=array('id_user'=>$id);
         $this->m_crud->delete_data($where,'user');
-        redirect('user?pesan=berhasil_hapus');
+        redirect('admin/user?pesan=berhasil_hapus');
     }
  } 
 ?>
