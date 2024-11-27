@@ -15,11 +15,15 @@ class berita extends CI_Controller {
 		$data['berita']=$this->m_post->get_data_berita_post();
 		$data['internal']=$this->m_post->get_data_berita_post_internal();
 		$data['eksternal']=$this->m_post->get_data_berita_post_eksternal();
+		$data['internal_count']=$this->m_post->get_count_berita_post_internal();
+		$data['eksternal_count']=$this->m_post->get_count_berita_post_eksternal();
 		$this->load->view('v_berita', $data);
 	}
 
 	public function detail($slug){
 		$data['berita']=$this->m_post->get_berita_by_slug($slug);
+		$data['internal_count']=$this->m_post->get_count_berita_post_internal();
+		$data['eksternal_count']=$this->m_post->get_count_berita_post_eksternal();
 		$this->load->view('v_berita_detail',$data);
 	}
 }

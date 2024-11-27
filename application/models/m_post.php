@@ -62,6 +62,22 @@ class m_post extends CI_Model{
 		$data=$this->db->query("SELECT id_berita,judul,redaksi,tanggal,gambar,kategori,berita_id_user,author,berita_slug AS berita_slug,author,berita_id_user,kategori,gambar,tanggal,redaksi,judul FROM berita WHERE kategori='eksternal' ORDER BY id_berita DESC limit 4");
 		return $data;
 	}
+
+	public function get_count_berita_post_internal($kategori='internal_count')
+	{
+		$data = $this->db->query("SELECT COUNT(*) as total FROM berita WHERE kategori='internal'");
+		$result = $data->row();
+		return $result->total;
+
+	}
+
+	public function get_count_berita_post_eksternal($kategori='eksternal_count')
+	{
+		$data = $this->db->query("SELECT COUNT(*) as total FROM berita WHERE kategori='eksternal'");
+		$result = $data->row();
+		return $result->total;
+
+	}
 	// End Berita Model
 
 	// Quotes Model

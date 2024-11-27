@@ -1,4 +1,5 @@
 <?php
+  setlocale(LC_TIME, 'ind.UTF-8');
   foreach ($kegiatan->result_array() as $k) :
   $kegiatan_id=$k['id_kegiatan'];
   $kegiatan_nama=$k['nama'];
@@ -12,6 +13,8 @@
   $kegiatan_status=$k['status'];
   $kegiatan_gambar=$k['gambar'];
   $kegiatan_slug=$k['kegiatan_slug'];
+  $date = new DateTime($kegiatan_tanggal);
+  $formatted_date = strftime("%A, %d %B %Y", $date->getTimestamp());
 ?>
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
@@ -125,7 +128,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                   <br><?php echo $kegiatan_jumlah_peserta;?>
                 </li>
                 <li><strong>Tanggal Kegiatan</strong> : 
-                  <br><?php echo $kegiatan_tanggal;?>
+                  <br><?php echo ucfirst($formatted_date);?>
                 </li>
                 <li><strong>Ormawa</strong> : 
                   <br><?php echo $kegiatan_ormawa;?>

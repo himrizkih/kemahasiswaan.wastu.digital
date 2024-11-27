@@ -57,17 +57,20 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             <div class="row align-self-center gy-4">
               <?php
                 $no=" ";
+                setlocale(LC_TIME, 'ind.UTF-8');
                 foreach ($pengumuman->result_array() as $p) :
                   $pengumuman_id=$p['id_pengumuman'];
                   $pengumuman_pengumuman=$p['pengumuman'];
                   $pengumuman_status=$p['status'];
                   $pengumuman_tanggal=$p['tanggal'];
+                  $date = new DateTime($pengumuman_tanggal);
+                  $formatted_date = strftime("%A, %d %B %Y", $date->getTimestamp());
               ?>
 
               <div class="col-md-4" data-aos="zoom-out" data-aos-delay="200"><?php echo $no++;?>
                 <div class="feature-box d-flex align-items-center">
                   <i class="bi bi-megaphone-fill"></i>
-                  <h3><?php echo $pengumuman_tanggal;?><br>  
+                  <h3><?php echo ucfirst($formatted_date);?><br>
                   <?php echo $pengumuman_pengumuman;?></h3>
                 </div>
               </div>

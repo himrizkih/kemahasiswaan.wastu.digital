@@ -90,12 +90,15 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             <tbody>
               <?php
                 $no=1;
+                setlocale(LC_TIME, 'ind.UTF-8');
                 foreach ($unduhan->result() as $row):
+                  $date = new DateTime($row->tanggal);
+                  $formatted_date = strftime("%A, %d %B %Y", $date->getTimestamp());
               ?>
                 <tr style="text-align:center;">
                   <td><?php echo $no++;?>.</td>
                   <td><?php echo $row->nama;?></td>
-                  <td><?php echo $row->tanggal;?></td>
+                  <td><?php echo ucfirst($formatted_date);?></td>
                   <td><a href="<?php echo site_url('unduhan/get_file/'.$row->id_unduhan);?>" onclick="return confirm('Apakah anda ingin mengunduh File <?php echo $row->nama;?> ?')" class="btn btn-sm btn-info" style="color: white; font-size: 12px;" >Unduh</a></td>
                 </tr>
               <?php endforeach;?>

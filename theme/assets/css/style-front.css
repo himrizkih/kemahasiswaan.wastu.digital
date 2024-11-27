@@ -1,3 +1,11 @@
+/* Disable text selection for the entire page */
+body {
+  user-select: none; /* Modern browsers */
+  -webkit-user-select: none; /* Chrome, Safari, Edge */
+  -moz-user-select: none; /* Firefox */
+  -ms-user-select: none; /* Older IE */
+}
+
 #my{
   zoom: 100%;
 }

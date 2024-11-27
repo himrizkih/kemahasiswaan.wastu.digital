@@ -198,6 +198,7 @@
 
                     <div class="row">
                       <?php
+                        setlocale(LC_TIME, 'ind.UTF-8');
                         foreach ($berita->result_array() as $b) :
                           $berita_id=$b['id_berita'];
                           $berita_judul=$b['judul'];
@@ -208,12 +209,15 @@
                           $berita_berita_id_user=$b['berita_id_user'];
                           $berita_author=$b['author'];
                           $berita_slug=$b['berita_slug'];
+
+                          $date = new DateTime($berita_tanggal);
+                          $formatted_date = strftime("%A, %d %B %Y", $date->getTimestamp());
                       ?>
 
                       <div class="col-lg-3">
                         <div class="post-box">
                           <div class="post-img"><img src="<?php echo base_url().'theme/assets/img/berita/'.$berita_gambar;?>" class="img-fluid" alt=""></div>
-                          <span class="post-date"><?php echo $berita_tanggal;?></span>
+                          <span class="post-date"><?php echo ucfirst($formatted_date);?></span>
                             <h4 class="post-title"><?php echo limit_words($berita_judul,6).'...';?></h4>
                             <h5 class="post"><?php echo limit_words($berita_redaksi,5).'...';?></h5>
                             <h5><a class="readmore stretched-link mt-auto" href="<?php echo base_url().'berita'?>"><span>Selengkapnya</span><i class="bi bi-arrow-right"></i></a></h5>

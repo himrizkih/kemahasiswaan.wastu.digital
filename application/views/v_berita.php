@@ -133,19 +133,21 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             <!-- Blog Sidebar-//1811 -->
             <div class="sidebar">
 
-              <div class="sidebar-item search-form">
-                <h3 class="sidebar-title">Search</h3>
-                <form action="" class="mt-3">
-                  <input type="text">
-                  <button type="submit"><i class="bi bi-search"></i></button>
-                </form>
-              </div><!-- End sidebar search formn-->
+            <!--<div class="sidebar-item search-form">
+              <h3 class="sidebar-title">Search</h3>
+              <form id="search-form" class="mt-3">
+                <input type="text" id="search-input" placeholder="Cari kata kunci Berita">
+                <button type="button" id="search-button" title="Click here to search. You can type a keyword in the box above.">
+                  <i class="bi bi-search"></i>
+                </button>
+              </form>
+            </div>--><!-- End sidebar search formn-->
 
               <div class="sidebar-item categories">
-                <h3 class="sidebar-title">Kategori</h3>
+                <h3 class="sidebar-title">Kategori Berita</h3>
                 <ul class="mt-3">
-                  <li><a href="#">Internal <span>(...)</span></a></li>
-                  <li><a href="#">Eksternal <span>(...)</span></a></li>
+                  <li><a href="#">Internal <span>(<?php echo $internal_count; ?>)</span></a></li>
+                  <li><a href="#">Eksternal <span>(<?php echo $eksternal_count; ?>)</span></a></li>
                 </ul>
               </div><!-- End sidebar categories-->
 
@@ -155,6 +157,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                 <div class="mt-3">
                 <?php
                   $no=" ";
+                  setlocale(LC_TIME, 'ind.UTF-8');
                   foreach ($berita->result_array() as $b) :
                     $berita_id=$b['id_berita'];
                     $berita_judul=$b['judul'];
@@ -165,13 +168,15 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                     $berita_berita_id_user=$b['berita_id_user'];
                     $berita_author=$b['author'];
                     $berita_slug=$b['berita_slug'];
+                    $date = new DateTime($berita_tanggal);
+                    $formatted_date = strftime("%A, %d %B %Y", $date->getTimestamp());
                 ?>
 
                   <div class="post-item mt-3">
                     <img src="<?php echo base_url().'theme/assets/img/berita/'.$berita_gambar;?>" alt="" class="flex-shrink-0">
                     <div>
                       <h4><a href="<?php echo base_url().'berita_detail/'.$berita_slug;?>"><?php echo limit_words($berita_judul,5).'...';?></a>
-                      <time datetime="2020-01-01"><?php echo $berita_tanggal;?></time></h4>
+                      <time><?php echo ucfirst($formatted_date);?></time></h4>
                     </div>
                   </div><!-- End recent post item-->
 

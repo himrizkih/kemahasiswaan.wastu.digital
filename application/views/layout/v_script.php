@@ -1,3 +1,32 @@
+<script>
+  // Disable right-click and context menu
+  document.addEventListener('contextmenu', (e) => {
+    e.preventDefault();
+    alert('Right-click is disabled on this page.');
+  });
+
+  // Disable copy, cut, and paste
+  document.addEventListener('copy', (e) => {
+    e.preventDefault();
+    alert('Copying is not allowed.');
+  });
+  
+  document.addEventListener('cut', (e) => {
+    e.preventDefault();
+    alert('Cutting is not allowed.');
+  });
+
+  document.addEventListener('paste', (e) => {
+    e.preventDefault();
+    alert('Pasting is not allowed.');
+  });
+  
+  // Prevent text selection
+  document.addEventListener('selectstart', (e) => {
+    e.preventDefault();
+  });
+</script>
+
 <!-- Favicons -->
   <link rel="shortcut icon" type="image/gif" href="<?php echo base_url().'theme/assets/img/favicon.png'?>">
   <link rel="apple-touch-icon" href="<?php echo base_url().'theme/assets/img/apple-touch-icon.png'?>">
