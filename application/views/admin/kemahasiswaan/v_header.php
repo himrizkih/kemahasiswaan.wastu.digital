@@ -70,7 +70,7 @@
           <a class="dropdown-item" href="<?php echo base_url() ?>admin/kemahasiswaan/masuk/password"><i class="fas fa-fw fa-key"></i> Ganti Password</a>
           <!-- <a class="dropdown-item" href="#">Activity Log</a> -->
           <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="<?php echo base_url() ?>admin/kemahasiswaan/masuk/logout" onClick="return confirm('Apakah anda ingin Logout ?')"><i class="fas fa-fw fa-arrow-alt-circle-right"></i> Logout</a>
+          <a class="dropdown-item" href="<?php echo base_url() ?>admin/kemahasiswaan/masuk/logout" onClick="return confirm('Apakah anda ingin Logout?')"><i class="fas fa-fw fa-arrow-alt-circle-right"></i> Logout</a>
         </div>
       </li>
 
@@ -178,7 +178,7 @@
 
       <!-- Sidebar Menu Logout -->
       <li class="nav-item">
-        <a class="nav-link" href="<?php echo base_url() ?>admin/kemahasiswaan/masuk/logout" onClick="return confirm('Apakah anda ingin Logout ?')">
+        <a class="nav-link" href="<?php echo base_url() ?>admin/kemahasiswaan/masuk/logout" onClick="return confirm('Apakah anda ingin Logout?')">
           <i class="fas fa-fw fa-arrow-alt-circle-right"></i>
           <span>Logout</span>
         </a>
@@ -224,7 +224,7 @@
 
       <!-- Sidebar Menu Logout -->
       <li class="nav-item">
-        <a class="nav-link" href="<?php echo base_url() ?>admin/kemahasiswaan/masuk/logout" onClick="return confirm('Apakah anda ingin Logout ?')">
+        <a class="nav-link" href="<?php echo base_url() ?>admin/kemahasiswaan/masuk/logout" onClick="return confirm('Apakah anda ingin Logout?')">
           <i class="fas fa-fw fa-arrow-alt-circle-right"></i>
           <span>Logout</span>
         </a>

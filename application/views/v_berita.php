@@ -80,6 +80,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
             <div class="row gy-4 posts-list">
           <?php
+            setlocale(LC_TIME, 'ind.UTF-8');
             foreach ($berita->result_array() as $b) :
               $berita_id=$b['id_berita'];
               $berita_judul=$b['judul'];
@@ -90,6 +91,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
               $berita_berita_id_user=$b['berita_id_user'];
               $berita_author=$b['author'];
               $berita_slug=$b['berita_slug'];
+              $date = new DateTime($berita_tanggal);
+              $formatted_date = strftime("%d %b %Y", $date->getTimestamp());
           ?>
 
               <div class="col-lg-6">
@@ -106,7 +109,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                   <div class="meta-top">
                     <ul>
                       <li class="d-flex align-items-center"><i class="bi bi-person"></i> <a href="<?php echo base_url().'berita_detail/'.$berita_slug;?>"><?php echo limit_words($berita_author,2).'...';?></a></li>
-                      <li class="d-flex align-items-center"><i class="bi bi-clock"></i> <a href="<?php echo base_url().'berita_detail/'.$berita_slug;?>"><time datetime="2022-01-01"><?php echo $berita_tanggal;?></time></a></li>
+                      <li class="d-flex align-items-center"><i class="bi bi-clock"></i> <a href="<?php echo base_url().'berita_detail/'.$berita_slug;?>"><time><?php echo ucfirst($formatted_date);?></time></a></li>
                     </ul>
                   </div>
 
@@ -211,6 +214,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
             <div class="row gy-4 posts-list">
           <?php
+            setlocale(LC_TIME, 'ind.UTF-8');
             foreach ($internal->result_array() as $i) :
               $berita_id=$i['id_berita'];
               $berita_judul=$i['judul'];
@@ -221,6 +225,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
               $berita_berita_id_user=$i['berita_id_user'];
               $berita_author=$i['author'];
               $berita_slug=$i['berita_slug'];
+              $date = new DateTime($berita_tanggal);
+              $formatted_date = strftime("%d %b %Y", $date->getTimestamp());
           ?>
 
               <div class="col-lg-6">
@@ -237,7 +243,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                   <div class="meta-top">
                     <ul>
                       <li class="d-flex align-items-center"><i class="bi bi-person"></i> <a href="<?php echo base_url().'berita_detail/'.$berita_slug;?>"><?php echo limit_words($berita_author,2).'...';?></a></li>
-                      <li class="d-flex align-items-center"><i class="bi bi-clock"></i> <a href="<?php echo base_url().'berita_detail/'.$berita_slug;?>"><time datetime="2022-01-01"><?php echo $berita_tanggal;?></time></a></li>
+                      <li class="d-flex align-items-center"><i class="bi bi-clock"></i> <a href="<?php echo base_url().'berita_detail/'.$berita_slug;?>"><time><?php echo ucfirst($formatted_date);?></time></a></li>
                     </ul>
                   </div>
 
@@ -279,6 +285,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
             <div class="row gy-4 posts-list">
           <?php
+            setlocale(LC_TIME, 'ind.UTF-8');
             foreach ($eksternal->result_array() as $e) :
               $berita_id=$e['id_berita'];
               $berita_judul=$e['judul'];
@@ -289,6 +296,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
               $berita_berita_id_user=$e['berita_id_user'];
               $berita_author=$e['author'];
               $berita_slug=$e['berita_slug'];
+              $date = new DateTime($berita_tanggal);
+              $formatted_date = strftime("%d %b %Y", $date->getTimestamp());
           ?>
 
               <div class="col-lg-6">
@@ -305,7 +314,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                   <div class="meta-top">
                     <ul>
                       <li class="d-flex align-items-center"><i class="bi bi-person"></i> <a href="<?php echo base_url().'berita_detail/'.$berita_slug;?>"><?php echo limit_words($berita_author,2).'...';?></a></li>
-                      <li class="d-flex align-items-center"><i class="bi bi-clock"></i> <a href="<?php echo base_url().'berita_detail/'.$berita_slug;?>"><time datetime="2022-01-01"><?php echo $berita_tanggal;?></time></a></li>
+                      <li class="d-flex align-items-center"><i class="bi bi-clock"></i> <a href="<?php echo base_url().'berita_detail/'.$berita_slug;?>"><time><?php echo ucfirst($formatted_date);?></time></a></li>
                     </ul>
                   </div>
 
